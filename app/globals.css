@@ -1,0 +1,320 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* THEME VARIABLES DEFINITION */
+:root {
+  --font-poppins: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-ibm-sans: var(--font-poppins);
+  --font-ibm-mono: var(--font-poppins);
+}
+
+/* MODE 1 — WHITE THEME (FULL WHITE BG + VERY LIGHT GREEN LOGO CARDS + VERY LIGHT BLUE TOPIC CARDS + FULL BLACK & GREEN FONTS) */
+:root,
+body[data-theme="ivory"],
+body[data-theme="light"],
+body[data-theme="white"] {
+  --theme-name: "white";
+  --bg: #ffffff;
+  --bg2: #ffffff;
+  --bg3: #f8fafc;
+  --panel: #edfcf2;
+  --panel2: #f0f7ff;
+  --panel3: #e0f2fe;
+  --ink: #000000;
+  --soft: rgba(0, 0, 0, 0.84);
+  --faint: rgba(0, 0, 0, 0.58);
+  --line: rgba(0, 135, 78, 0.12);
+  --line-strong: rgba(0, 135, 78, 0.30);
+  --green: #00874e;
+  --green2: #059669;
+  --amber: #b45309;
+  --blue: #0284c7;
+  --shadow: rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.08);
+  --logoInk: #000000;
+  --logoGreen: #00874e;
+  --card-glow: rgba(0, 135, 78, 0.08);
+  --grid-line: rgba(0, 135, 78, 0.04);
+}
+
+/* MODE 2 — PURE BLACK (DEEP BLACK + LOGO GREEN + SKY BLUE MIX) */
+body[data-theme="black"] {
+  --theme-name: "black";
+  --bg: #030604;
+  --bg2: #080f0a;
+  --bg3: #0c151c;
+  --panel: #0a1118;
+  --panel2: #0f1c2b;
+  --panel3: #15263a;
+  --ink: #f0f9ff;
+  --soft: rgba(224, 242, 254, 0.78);
+  --faint: rgba(224, 242, 254, 0.50);
+  --line: rgba(56, 189, 248, 0.08);
+  --line-strong: rgba(56, 189, 248, 0.16);
+  --green: #00874e;
+  --green2: #059669;
+  --amber: #f5b73d;
+  --blue: #38bdf8;
+  --shadow: rgba(0, 0, 0, 0.75);
+  --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.9);
+  --logoInk: #ffffff;
+  --logoGreen: #00874e;
+  --card-glow: rgba(56, 189, 248, 0.14);
+  --grid-line: rgba(56, 189, 248, 0.04);
+}
+
+/* MODE 3 — NAVY BLUE (DEEP NAVY BLUE + LOGO GREEN + SKY BLUE INFRASTRUCTURE) */
+body[data-theme="navy"] {
+  --theme-name: "navy";
+  --bg: #061320;
+  --bg2: #0a1c30;
+  --bg3: #0e2540;
+  --panel: #0d2238;
+  --panel2: #122e4d;
+  --panel3: #183c63;
+  --ink: #f0f9ff;
+  --soft: rgba(224, 242, 254, 0.78);
+  --faint: rgba(224, 242, 254, 0.50);
+  --line: rgba(56, 189, 248, 0.09);
+  --line-strong: rgba(56, 189, 248, 0.18);
+  --green: #00874e;
+  --green2: #059669;
+  --amber: #f5b73d;
+  --blue: #38bdf8;
+  --shadow: rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.7);
+  --logoInk: #ffffff;
+  --logoGreen: #00874e;
+  --card-glow: rgba(56, 189, 248, 0.18);
+  --grid-line: rgba(56, 189, 248, 0.05);
+}
+
+/* GLOBAL RESET & BASE STYLES */
+*, html, body, button, input, select, textarea {
+  box-sizing: border-box;
+  font-family: var(--font-poppins), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+body {
+  font-family: var(--font-poppins), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg);
+  color: var(--ink);
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  transition: background-color 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.35s ease,
+              border-color 0.35s ease,
+              box-shadow 0.35s ease;
+}
+
+/* Smooth transition for theme switching on surfaces */
+div, section, header, footer, nav, button, a, span, p, h1, h2, h3, h4, h5, h6 {
+  transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease,
+              color 0.25s ease,
+              box-shadow 0.35s ease;
+}
+
+/* TYPOGRAPHY — EXCLUSIVELY POPPINS */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-poppins), sans-serif;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+}
+
+.font-mono-lbl {
+  font-family: var(--font-poppins), sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* SELECTION */
+::selection {
+  background: var(--green);
+  color: #ffffff;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--line-strong);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--green);
+}
+
+/* REDUCED MOTION SUPPORT */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* UTILITY GRID PATTERN */
+.energy-grid-bg {
+  background-image: 
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+/* PULSE RING */
+@keyframes ping-slow {
+  0% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.6); opacity: 0; }
+  100% { transform: scale(1); opacity: 0; }
+}
+
+.ping-ring {
+  animation: ping-slow 3s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* ==========================================================================
+   TRANSVOLT STYLE CIRCULAR VIEW TRANSITION & EXPANDING AURA WAVE
+   ========================================================================== */
+@property --mask-radius {
+  syntax: '<length>';
+  inherits: true;
+  initial-value: 0px;
+}
+
+::view-transition,
+::view-transition-group(root),
+::view-transition-image-pair(root),
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+  pointer-events: none !important;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 99999;
+  -webkit-mask-image: radial-gradient(
+    circle at var(--theme-x, 50%) var(--theme-y, 50%),
+    #000 0%,
+    #000 calc(var(--mask-radius, 0px) - 520px),
+    rgba(0, 0, 0, 0.94) calc(var(--mask-radius, 0px) - 420px),
+    rgba(0, 0, 0, 0.80) calc(var(--mask-radius, 0px) - 320px),
+    rgba(0, 0, 0, 0.60) calc(var(--mask-radius, 0px) - 220px),
+    rgba(0, 0, 0, 0.38) calc(var(--mask-radius, 0px) - 140px),
+    rgba(0, 0, 0, 0.18) calc(var(--mask-radius, 0px) - 70px),
+    rgba(0, 0, 0, 0.04) calc(var(--mask-radius, 0px) - 20px),
+    transparent var(--mask-radius, 0px)
+  );
+  mask-image: radial-gradient(
+    circle at var(--theme-x, 50%) var(--theme-y, 50%),
+    #000 0%,
+    #000 calc(var(--mask-radius, 0px) - 520px),
+    rgba(0, 0, 0, 0.94) calc(var(--mask-radius, 0px) - 420px),
+    rgba(0, 0, 0, 0.80) calc(var(--mask-radius, 0px) - 320px),
+    rgba(0, 0, 0, 0.60) calc(var(--mask-radius, 0px) - 220px),
+    rgba(0, 0, 0, 0.38) calc(var(--mask-radius, 0px) - 140px),
+    rgba(0, 0, 0, 0.18) calc(var(--mask-radius, 0px) - 70px),
+    rgba(0, 0, 0, 0.04) calc(var(--mask-radius, 0px) - 20px),
+    transparent var(--mask-radius, 0px)
+  );
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+@keyframes themeCircularWaveExpand {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0.95;
+  }
+  35% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+  }
+}
+
+.theme-circular-wave-anim {
+  animation: themeCircularWaveExpand 2100ms cubic-bezier(0.12, 1, 0.28, 1) forwards;
+  will-change: transform, opacity;
+}
+
+/* HERO WATERMARK & TYPOGRAPHY ADAPTATION FOR WHITE THEME */
+body[data-theme="ivory"] .hero-watermark-img,
+body[data-theme="white"] .hero-watermark-img,
+body[data-theme="light"] .hero-watermark-img {
+  opacity: 0.45 !important;
+  mix-blend-mode: multiply !important;
+  filter: contrast(1.22) brightness(1.05) !important;
+}
+
+body[data-theme="ivory"] .hero-scrim-h,
+body[data-theme="white"] .hero-scrim-h,
+body[data-theme="light"] .hero-scrim-h {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.88) 0%, rgba(255, 255, 255, 0.50) 45%, rgba(255, 255, 255, 0.08) 100%) !important;
+}
+
+body[data-theme="ivory"] .hero-scrim-v,
+body[data-theme="white"] .hero-scrim-v,
+body[data-theme="light"] .hero-scrim-v {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0.08) 30%, rgba(255, 255, 255, 0.35) 70%, #ffffff 100%) !important;
+}
+
+body[data-theme="ivory"] .hero-title-light-text,
+body[data-theme="white"] .hero-title-light-text,
+body[data-theme="light"] .hero-title-light-text {
+  color: #000000 !important;
+  text-shadow: none !important;
+}
+
+body[data-theme="ivory"] .hero-title-bold-text,
+body[data-theme="white"] .hero-title-bold-text,
+body[data-theme="light"] .hero-title-bold-text {
+  color: #00874e !important;
+  text-shadow: none !important;
+}
+
+body[data-theme="ivory"] .hero-eyebrow-text,
+body[data-theme="white"] .hero-eyebrow-text,
+body[data-theme="light"] .hero-eyebrow-text {
+  color: #00874e !important;
+}
+
+body[data-theme="ivory"] .hero-eyebrow-bar,
+body[data-theme="white"] .hero-eyebrow-bar,
+body[data-theme="light"] .hero-eyebrow-bar {
+  background-color: #00874e !important;
+  box-shadow: none !important;
+}
+
+body[data-theme="ivory"] .hero-desc-text,
+body[data-theme="white"] .hero-desc-text,
+body[data-theme="light"] .hero-desc-text {
+  color: rgba(0, 0, 0, 0.82) !important;
+  text-shadow: none !important;
+}
+
