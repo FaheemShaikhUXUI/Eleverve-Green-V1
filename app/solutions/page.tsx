@@ -24,8 +24,8 @@ export default function SolutionsPage() {
         titleBold="ENERGY-AS-A-SERVICE."
         description="Two ways to buy firm renewable power: a long-term utility-scale PPA, or a managed Energy-as-a-Service. Open access, FDRE/RTC, hybrid and storage are how we shape and deliver it."
         imageSrc="/images/heroes/solutions.jpg"
-        imageAlt="Modular battery energy storage containers and solar arrays under starlit dark sky"
-        imagePosition="center 84%"
+        imageAlt="Engineer surveying hybrid solar panel farm and wind turbines under dynamic sky"
+        imagePosition="center center"
       />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-8 sm:pt-12">

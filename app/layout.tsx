@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import { Navbar } from "@/components/navigation/Navbar";
 import { Footer } from "@/components/navigation/Footer";
+import { CustomCursor } from "@/components/ui/CustomCursor";
 
 const poppins = Poppins({
   weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
@@ -80,6 +81,7 @@ export default function RootLayout({
     >
       <body className="min-h-screen flex flex-col font-sans selection:bg-green selection:text-white" data-theme="ivory">
         <ThemeProvider>
+          <CustomCursor />
           <Navbar />
           <main className="flex-1 w-full">{children}</main>
           <Footer />

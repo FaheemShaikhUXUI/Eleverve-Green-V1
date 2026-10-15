@@ -72,155 +72,208 @@ export function HeroVideo() {
         <div className="absolute inset-0 energy-grid-bg opacity-10 mask-radial" />
       </div>
 
-      {/* Main Content Area with Crisp High-Contrast White Fonts */}
+      {/* Main Content Area with Futuristic Clean-Tech Command UI */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full">
+        {/* Top Telemetry Coordinate Bar */}
+        <div className="flex items-center justify-between mb-8 pb-3 border-b border-white/10 text-[11px] font-mono text-emerald-400">
+          <div className="flex items-center gap-3">
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-400/30 text-emerald-300">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
+              <span>LIVE GRID TELEMETRY</span>
+            </span>
+            <span className="text-white/50 hidden sm:inline">ISTS 220kV / 400kV INTERCONNECT</span>
+          </div>
+          <div className="flex items-center gap-4 text-white/70">
+            <span className="hidden md:inline">FREQ: <strong className="text-emerald-400 font-mono">50.02 Hz</strong></span>
+            <span>SYSTEM: <strong className="text-white">OPTIMAL</strong></span>
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Column: Typography & Positioning */}
-          <div className="lg:col-span-8">
-            {/* Eyebrow */}
-            <div className="inline-flex items-center gap-3 mb-6 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-green animate-pulse" />
-              <span className="font-mono text-xs uppercase tracking-widest text-green font-semibold">
+          <div className="lg:col-span-7">
+            {/* Eyebrow Pill */}
+            <div className="inline-flex items-center gap-2.5 mb-6 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-400/30 backdrop-blur-md shadow-glow-sm">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span className="font-mono text-xs uppercase tracking-widest text-emerald-300 font-bold">
                 {companyData.eyebrow}
               </span>
             </div>
 
-            {/* Main Headline with Bold White and Bold Green Contrast */}
-            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.96] mb-8">
-              <span className="font-bold text-white drop-shadow-sm">ANY RENEWABLE ENERGY,</span>
-              <br />
-              <span className="font-bold text-green drop-shadow-md">
+            {/* Main Headline with Futuristic Neon Emerald Glow */}
+            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[5.25rem] font-bold tracking-tight leading-[0.94] mb-8">
+              <span className="font-bold text-white drop-shadow-sm block">ANY RENEWABLE</span>
+              <span className="font-bold text-white drop-shadow-sm block">ENERGY,</span>
+              <span className="font-bold text-emerald-400 drop-shadow-[0_0_35px_rgba(16,185,129,0.45)]">
                 MADE FIRM.
               </span>
             </h1>
 
             {/* Core Supporting Positioning with Crisp High-Contrast White Text */}
-            <p className="text-lg sm:text-xl lg:text-2xl text-white/90 font-normal leading-relaxed max-w-2xl mb-10 drop-shadow-xs">
+            <p className="text-lg sm:text-xl text-white/90 font-normal leading-relaxed max-w-2xl mb-10 drop-shadow-xs">
               {companyData.coreStatement}
             </p>
 
-            {/* Intelligent CTAs */}
+            {/* Futuristic CTAs */}
             <div className="flex flex-wrap items-center gap-4 sm:gap-5">
               <Link
                 href="/platform"
-                className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-green text-white font-heading font-medium shadow-glow hover:-translate-y-0.5 transition-all duration-300 group"
+                className="relative inline-flex items-center gap-3 px-8 py-4 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-heading font-bold text-sm tracking-wide shadow-[0_0_30px_rgba(16,185,129,0.5)] hover:shadow-[0_0_40px_rgba(16,185,129,0.7)] hover:-translate-y-0.5 transition-all duration-300 group"
               >
-                <span>Explore the Platform</span>
+                <span>EXPLORE THE PLATFORM</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Link>
 
               <Link
-                href="/why-now"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white/10 backdrop-blur-md border border-white/25 text-white hover:text-green hover:border-green hover:bg-white/20 transition-all duration-300 font-heading font-medium shadow-xs"
+                href="/portfolio"
+                className="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/25 text-white hover:text-emerald-300 hover:border-emerald-400/50 transition-all duration-300 font-heading font-medium text-sm"
               >
-                <span>Why Now: Hour-Deficit Market</span>
+                <span>Verified Assets (52.5 MWp+)</span>
               </Link>
             </div>
           </div>
 
-          {/* Right Column: Platform Operating Paradigm Card (Super Apple Glassmorphism) */}
-          <div className="lg:col-span-4">
+          {/* Right Column: High-Tech Telemetry HUD Card (CleanMax & Vibrant Energy Style) */}
+          <div className="lg:col-span-5">
             <div
-              className="relative overflow-hidden rounded-[28px] p-6 sm:p-8 transition-all duration-500 hover:scale-[1.015] group"
+              className="rounded-none p-6 sm:p-8 hud-corner-bracket relative overflow-hidden group transition-all duration-300"
               style={{
-                background:
-                  "linear-gradient(135deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.05) 30%, rgba(10, 18, 14, 0.45) 70%, rgba(4, 8, 6, 0.70) 100%)",
-                backdropFilter: "blur(40px) saturate(190%) contrast(105%)",
-                WebkitBackdropFilter: "blur(40px) saturate(190%) contrast(105%)",
+                background: "rgba(6, 14, 10, 0.58)",
+                backdropFilter: "blur(32px) saturate(190%)",
+                WebkitBackdropFilter: "blur(32px) saturate(190%)",
                 border: "1px solid rgba(255, 255, 255, 0.22)",
-                boxShadow:
-                  "inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 0.40), inset 0 -1.5px 2px 0 rgba(0, 0, 0, 0.25), 0 24px 60px -12px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.06)",
+                boxShadow: "0 30px 60px -15px rgba(0, 0, 0, 0.85), inset 0 1px 1px 0 rgba(255, 255, 255, 0.25)",
               }}
             >
-              {/* Diagonal Specular Reflection Sheen (Apple Glass Glare) */}
-              <div
-                className="pointer-events-none absolute -top-[120%] -left-[60%] w-[220%] h-[220%] rotate-[28deg] opacity-70 transition-opacity duration-700 group-hover:opacity-90"
-                style={{
-                  background:
-                    "linear-gradient(180deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.02) 42%, transparent 60%)",
-                }}
-              />
+              {/* Luminous Top Hover Beam */}
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-emerald-400 to-transparent opacity-70 group-hover:opacity-100 transition-opacity duration-500 z-30" />
 
-              {/* Ambient Internal Prismatic Glass Aura */}
-              <div
-                className="pointer-events-none absolute -top-12 -right-12 w-48 h-48 rounded-full blur-3xl opacity-50 transition-opacity duration-500 group-hover:opacity-75"
-                style={{
-                  background:
-                    "radial-gradient(circle, rgba(0, 135, 78, 0.45) 0%, rgba(56, 189, 248, 0.22) 60%, transparent 100%)",
-                }}
-              />
+              {/* Card Ambient Glow Aura */}
+              <div className="pointer-events-none absolute -top-12 -right-12 w-52 h-52 rounded-none blur-3xl opacity-40 bg-emerald-500/25 group-hover:opacity-65 transition-opacity" />
 
-              {/* Card Header */}
-              <div className="flex items-center justify-between border-b border-white/15 pb-4 mb-6 relative z-10">
-                <span className="font-mono text-[11px] font-semibold tracking-wider uppercase text-amber drop-shadow-xs">
-                  Operating Paradigm
-                </span>
-                <span
-                  className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-emerald-300 font-mono text-[10px] backdrop-blur-md"
-                  style={{
-                    background: "rgba(0, 135, 78, 0.22)",
-                    border: "1px solid rgba(0, 245, 118, 0.30)",
-                    boxShadow: "inset 0 1px 0 0 rgba(255, 255, 255, 0.20)",
-                  }}
-                >
-                  <CheckCircle2 className="w-3 h-3 text-emerald-400" />
-                  <span>Accountable Delivery</span>
+              {/* Card Header with HUD Status */}
+              <div className="flex items-center justify-between border-b border-white/20 pb-4 mb-6 relative z-10">
+                <div className="flex items-center gap-2.5">
+                  <span className="w-2 h-2 rounded-none bg-emerald-400 animate-ping" />
+                  <span className="font-mono text-xs font-bold uppercase tracking-widest text-emerald-300 drop-shadow-[0_0_8px_rgba(52,211,153,0.8)]">
+                    DISPATCH ENGINE HUD
+                  </span>
+                </div>
+                <span className="px-2.5 py-0.5 rounded-none text-emerald-300 font-mono text-[10px] font-bold bg-emerald-950/70 border border-emerald-400/40 backdrop-blur-md shadow-xs">
+                  RTC-ACTIVE
                 </span>
               </div>
 
-              {/* Stacked Parameters */}
-              <div className="space-y-3.5 text-xs font-mono relative z-10">
-                <div className="flex items-center justify-between py-2 border-b border-white/10">
-                  <span className="text-white/70">Offtaker Focus</span>
-                  <span className="text-white font-semibold drop-shadow-xs">Contracted Demand Profile</span>
+              {/* Real-Time Dispatch Bars - High Contrast & Glowing */}
+              <div className="space-y-4 mb-6 relative z-10">
+                {/* Solar Generation */}
+                <div>
+                  <div className="flex justify-between text-xs font-mono mb-1.5">
+                    <span className="text-white font-semibold drop-shadow-sm">Solar Irradiation Capture</span>
+                    <span className="text-emerald-300 font-bold drop-shadow-[0_0_8px_rgba(52,211,153,0.9)]">96% Midday Peak</span>
+                  </div>
+                  <div className="w-full h-2.5 rounded-none bg-white/10 border border-white/15 overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-emerald-500 via-emerald-400 to-emerald-300 rounded-none w-[96%] shadow-[0_0_12px_rgba(52,211,153,0.9)]" />
+                  </div>
                 </div>
-                <div className="flex items-center justify-between py-2 border-b border-white/10">
-                  <span className="text-white/70">Generation</span>
-                  <span className="text-white font-semibold drop-shadow-xs">Solar · Wind · Hydro · BESS</span>
+
+                {/* Wind Ramping */}
+                <div>
+                  <div className="flex justify-between text-xs font-mono mb-1.5">
+                    <span className="text-white font-semibold drop-shadow-sm">Diurnal Wind Balancing</span>
+                    <span className="text-sky-300 font-bold drop-shadow-[0_0_8px_rgba(56,189,248,0.9)]">82% Evening Dispatch</span>
+                  </div>
+                  <div className="w-full h-2.5 rounded-none bg-white/10 border border-white/15 overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-sky-500 via-sky-400 to-sky-300 rounded-none w-[82%] shadow-[0_0_12px_rgba(56,189,248,0.9)]" />
+                  </div>
                 </div>
-                <div className="flex items-center justify-between py-2 border-b border-white/10">
-                  <span className="text-white/70">Structure</span>
-                  <span className="text-white font-semibold drop-shadow-xs">Utility PPA &amp; EaaS</span>
-                </div>
-                <div className="flex items-center justify-between py-2 border-b border-white/10">
-                  <span className="text-white/70">Ownership</span>
-                  <span className="text-white font-semibold drop-shadow-xs">Long-Term Owner-Operator</span>
+
+                {/* BESS Storage */}
+                <div>
+                  <div className="flex justify-between text-xs font-mono mb-1.5">
+                    <span className="text-white font-semibold drop-shadow-sm">BESS Storage Firming</span>
+                    <span className="text-amber-300 font-bold drop-shadow-[0_0_8px_rgba(251,191,36,0.9)]">100% SLA Guard</span>
+                  </div>
+                  <div className="w-full h-2.5 rounded-none bg-white/10 border border-white/15 overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-amber-500 via-amber-400 to-amber-300 rounded-none w-full shadow-[0_0_12px_rgba(251,191,36,0.9)]" />
+                  </div>
                 </div>
               </div>
 
-              {/* Central Result Outcome — Nested Frosted Glass Capsule */}
+              {/* Guaranteed Result Outcome Pill - Dark Transparent Emerald Glass */}
               <div
-                className="mt-6 p-4 rounded-2xl relative overflow-hidden backdrop-blur-xl transition-all duration-300 z-10"
+                className="p-4 sm:p-5 rounded-none relative z-10 overflow-hidden border border-emerald-500/40"
                 style={{
-                  background:
-                    "linear-gradient(135deg, rgba(0, 135, 78, 0.24) 0%, rgba(0, 80, 45, 0.14) 100%)",
-                  border: "1px solid rgba(0, 245, 118, 0.22)",
-                  boxShadow:
-                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.25), 0 8px 24px -4px rgba(0, 0, 0, 0.35)",
+                  background: "rgba(0, 30, 16, 0.65)",
+                  backdropFilter: "blur(16px)",
+                  boxShadow: "inset 0 1px 1px 0 rgba(255, 255, 255, 0.15)",
                 }}
               >
-                <span className="block font-mono text-[10px] uppercase text-emerald-400 font-semibold tracking-widest mb-1 drop-shadow-xs">
-                  Guaranteed Outcome
+                <span className="block font-mono text-[10px] uppercase text-emerald-400 font-bold tracking-widest mb-1 drop-shadow-sm">
+                  // CONTRACTED DELIVERABLE
                 </span>
-                <div className="font-heading text-xl font-medium text-white flex items-center justify-between drop-shadow-xs">
+                <div className="font-heading text-lg font-bold text-white flex items-center justify-between drop-shadow-sm">
                   <span>Firm, Dispatchable Power</span>
-                  <Zap className="w-5 h-5 text-emerald-400" />
+                  <Zap className="w-5 h-5 text-emerald-400 animate-pulse drop-shadow-[0_0_8px_rgba(52,211,153,0.9)]" />
                 </div>
-                <p className="text-[11px] text-white/80 mt-1 leading-snug drop-shadow-xs">
-                  Measured on dependable delivered MWh, not theoretical installed MWp.
+                <p className="text-xs text-white/90 mt-1 leading-relaxed drop-shadow-sm font-normal">
+                  Measured on dependable delivered MWh, zero merchant penalty exposure.
                 </p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom Hero Bar: Video Controls & Scroll Hint with White Fonts */}
-        <div className="mt-16 pt-8 border-t border-white/15 flex items-center justify-between text-xs font-mono text-white/75">
+        {/* CleanMax / Vibrant Energy Style 4-Metric Ribbon Docked at Base */}
+        <div className="mt-14 pt-8 border-t border-white/15 grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="p-4 rounded-none bg-black/55 border border-white/15 backdrop-blur-md">
+            <span className="block font-mono text-[11px] uppercase tracking-wider text-emerald-400 font-bold mb-1">
+              Active Pipeline
+            </span>
+            <div className="font-heading text-3xl sm:text-4xl font-extrabold text-white">
+              1.2+ <span className="text-lg text-emerald-400">GW</span>
+            </div>
+            <span className="text-xs text-white/80 block mt-1 font-mono">Multi-state asset base</span>
+          </div>
+
+          <div className="p-4 rounded-none bg-black/55 border border-white/15 backdrop-blur-md">
+            <span className="block font-mono text-[11px] uppercase tracking-wider text-emerald-400 font-bold mb-1">
+              Firm Delivery SLA
+            </span>
+            <div className="font-heading text-3xl sm:text-4xl font-extrabold text-white">
+              99.8<span className="text-lg text-emerald-400">%</span>
+            </div>
+            <span className="text-xs text-white/80 block mt-1 font-mono">Contractual uptime guarantee</span>
+          </div>
+
+          <div className="p-4 rounded-none bg-black/55 border border-white/15 backdrop-blur-md">
+            <span className="block font-mono text-[11px] uppercase tracking-wider text-emerald-400 font-bold mb-1">
+              CO2e Abatement
+            </span>
+            <div className="font-heading text-3xl sm:text-4xl font-extrabold text-white">
+              3.2M+ <span className="text-lg text-emerald-400">T</span>
+            </div>
+            <span className="text-xs text-white/80 block mt-1 font-mono">Lifetime clean emissions</span>
+          </div>
+
+          <div className="p-4 rounded-none bg-black/55 border border-white/15 backdrop-blur-md">
+            <span className="block font-mono text-[11px] uppercase tracking-wider text-emerald-400 font-bold mb-1">
+              Grid Evacuation
+            </span>
+            <div className="font-heading text-3xl sm:text-4xl font-extrabold text-white">
+              ISTS <span className="text-lg text-emerald-400">Ready</span>
+            </div>
+            <span className="text-xs text-white/80 block mt-1 font-mono">220kV / 400kV pooling bays</span>
+          </div>
+        </div>
+
+        {/* Bottom Hero Bar: Video Controls & Scroll Hint */}
+        <div className="mt-8 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-white/70">
           <div className="flex items-center gap-3">
             <button
               type="button"
               onClick={togglePlay}
-              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-white/25 bg-white/10 text-white hover:text-green hover:border-green hover:bg-white/20 transition-all"
+              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-white/25 bg-white/10 text-white hover:text-emerald-400 hover:border-emerald-400/50 hover:bg-white/20 transition-all"
               aria-label={isPlaying ? "Pause background footage" : "Play background footage"}
             >
               {isPlaying ? <Pause className="w-3 h-3" /> : <Play className="w-3 h-3" />}
@@ -228,16 +281,16 @@ export function HeroVideo() {
             </button>
             <span className="hidden sm:inline text-white/30">|</span>
             <span className="hidden sm:inline text-white/60">
-              60% Ambient Infrastructure Background
+              Only Video on Platform · 60% Ambient Clean Energy Footage
             </span>
           </div>
 
           <Link
             href="#model"
-            className="inline-flex items-center gap-2 text-white/80 hover:text-green transition-colors"
+            className="inline-flex items-center gap-2 text-white/80 hover:text-emerald-400 transition-colors"
           >
-            <span>Scroll to Model</span>
-            <ArrowDown className="w-3.5 h-3.5 animate-bounce" />
+            <span>Scroll to Platform Model</span>
+            <ArrowDown className="w-3.5 h-3.5 animate-bounce text-emerald-400" />
           </Link>
         </div>
       </div>

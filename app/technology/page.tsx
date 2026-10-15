@@ -23,9 +23,9 @@ export default function TechnologyPage() {
         titleLight="RESOURCE-LED FDRE / RTC DESIGN, NOT"
         titleBold="TECHNOLOGY-LED SELLING."
         description="Renewable resource availability is region-specific. Solar irradiation, wind regime, hydro availability, land constraints, grid capacity, banking rules, open-access charges and demand patterns vary by geography."
-        imageSrc="/images/heroes/technology.jpg"
-        imageAlt="Modern wind turbine blade silhouetted against minimalist moody dark atmospheric sky"
-        imagePosition="center 78%"
+        imageSrc="/images/heroes/technology-hud.jpg"
+        imageAlt="Advanced renewable energy SCADA telemetry HUD interface with solar farm and digital power metrics"
+        imagePosition="center center"
       />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-8 sm:pt-12">

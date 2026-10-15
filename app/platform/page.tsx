@@ -25,8 +25,8 @@ export default function PlatformPage() {
         titleBold="RENEWABLE-POWER OPERATING PLATFORM."
         description="We start with the offtaker and the load. We then work backwards to the resource, grid connection, contract structure and capital — and stay accountable for delivery."
         imageSrc="/images/heroes/platform.jpg"
-        imageAlt="Sleek electrical transmission infrastructure and power grid against minimalist dark night"
-        imagePosition="center 78%"
+        imageAlt="Futuristic digital energy operating platform with solar panels, wind turbines, and cybernetic network telemetry"
+        imagePosition="center center"
       />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-8 sm:pt-12">

@@ -31,21 +31,34 @@ export default function TeamPage() {
       />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-8 sm:pt-12">
-
         {/* Editorial Team Profile Cards */}
-        <SlideInBottom delay={0.1} className="mb-20">
+        <SlideInBottom delay={0.1} className="mb-24">
+          <div className="mb-8">
+            <span className="font-mono text-xs uppercase tracking-widest text-green font-semibold block mb-2">
+              Founding Leadership &amp; Governance
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-heading font-bold text-ink">
+              Executive Directors &amp; <span className="text-green">Domain Disciplines</span>
+            </h2>
+          </div>
           <TeamGrid />
         </SlideInBottom>
 
         {/* Track Record Numerical Section */}
-        <div className="mb-20">
-          <div className="flex items-center justify-between mb-8">
-            <span className="font-mono text-xs uppercase tracking-widest text-green font-semibold">
-              Aggregate Leadership Precedent
-            </span>
-            <span className="font-mono text-xs text-faint">
-              Strictly Audited Metrics
-            </span>
+        <div className="mb-24">
+          <div className="flex flex-wrap items-center justify-between gap-3 mb-8 pb-3 border-b border-neutral-200 dark:border-neutral-800">
+            <div>
+              <span className="font-mono text-xs uppercase tracking-widest text-green font-semibold block mb-1">
+                Audited Institutional Precedent
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-heading font-bold text-ink">
+                Capital Deployment &amp; <span className="text-green">Development Scale</span>
+              </h2>
+            </div>
+            <div className="flex items-center gap-2 font-mono text-xs text-soft">
+              <span className="w-2 h-2 rounded-none bg-green animate-pulse" />
+              <span>STRICTLY VERIFIED METRICS</span>
+            </div>
           </div>
 
           <StaggerGrid className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -63,13 +76,18 @@ export default function TeamPage() {
         </div>
 
         {/* Ecosystem Section */}
-        <SlideInBottom delay={0.2} className="mb-20">
-          <div className="flex items-center justify-between mb-8">
-            <span className="font-mono text-xs uppercase tracking-widest text-amber font-semibold">
-              Platform Ecosystem Relationships
-            </span>
-            <span className="font-mono text-xs text-faint">
-              Affiliated Infrastructure &amp; Finance Entities
+        <SlideInBottom delay={0.2} className="mb-24">
+          <div className="flex flex-wrap items-center justify-between gap-3 mb-8 pb-3 border-b border-neutral-200 dark:border-neutral-800">
+            <div>
+              <span className="font-mono text-xs uppercase tracking-widest text-green font-semibold block mb-1">
+                Institutional Affiliations
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-heading font-bold text-ink">
+                Platform Ecosystem <span className="text-green">&amp; Finance Entities</span>
+              </h2>
+            </div>
+            <span className="font-mono text-xs text-neutral-400">
+              CO-FOUNDED &amp; ALIGNED ENTITIES
             </span>
           </div>
 
@@ -90,7 +108,7 @@ export default function TeamPage() {
         <div className="pt-2">
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-green text-white font-heading font-medium text-sm hover:shadow-glow transition-all"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-none bg-green text-white font-mono font-medium text-xs uppercase tracking-wider hover:bg-emerald-600 hover:shadow-lg transition-all"
           >
             <span>Initiate Executive Dialogue</span>
             <ArrowRight className="w-4 h-4" />

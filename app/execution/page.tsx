@@ -23,8 +23,9 @@ export default function ExecutionPage() {
         titleLight="GREENFIELD, BROWNFIELD AND HYBRID ROUTES, UNDER ONE"
         titleBold="OPERATING DISCIPLINE."
         description="We keep the execution message simple: build where new capacity makes sense, improve where existing capacity can be made stronger, and hybridise or add storage where the offtake requires a firmer supply profile."
-        imageSrc="/images/heroes/execution.jpg"
-        imageAlt="Modern high-voltage electrical substation and step-up transformers at twilight"
+        imageSrc="/images/heroes/execution-solar.png"
+        imageAlt="Field engineer installing high-efficiency utility solar panels on rooftop under bright blue sky"
+        imagePosition="center 35%"
       />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-8 sm:pt-12">

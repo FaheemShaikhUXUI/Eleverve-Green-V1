@@ -36,20 +36,17 @@ export function Navbar() {
     }
   }, [mobileOpen]);
 
-  const isDarkTheme = resolvedTheme === "black" || resolvedTheme === "navy";
-  const isHomeAtTop = pathname === "/" && !scrolled;
-  const isHeaderOverDark = (!scrolled && isDarkTheme) || isHomeAtTop;
+  const isHeaderOverDark = !scrolled;
 
   return (
     <>
       <header
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-out",
-          scrolled
-            ? "py-2.5 bg-bg/95 backdrop-blur-2xl shadow-xs border-b border-line"
-            : isHeaderOverDark
-            ? "py-3.5 bg-black/40 backdrop-blur-xl shadow-xs border-b border-white/10"
-            : "py-3.5 bg-white/80 backdrop-blur-xl shadow-xs border-b border-line"
+          "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-out backdrop-blur-xl",
+          scrolled ? "py-2.5" : "py-3.5",
+          isHeaderOverDark
+            ? "bg-black/70 border-b border-white/10 shadow-xs"
+            : "bg-white/70 dark:bg-black/70 border-b border-line dark:border-white/10 shadow-xs"
         )}
       >
         <div className="max-w-[1520px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">

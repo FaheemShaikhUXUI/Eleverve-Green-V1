@@ -2,6 +2,7 @@ import React from "react";
 import type { Metadata } from "next";
 import { PageHeroHeader } from "@/components/ui/PageHeroHeader";
 import { PortfolioMap } from "@/components/portfolio/PortfolioMap";
+import { ProjectShowcaseGrid } from "@/components/portfolio/ProjectShowcaseGrid";
 import { MediaSplitSection } from "@/components/ui/MediaSplitSection";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -23,14 +24,27 @@ export default function PortfolioPage() {
         titleLight="A SOLAR-LED STARTING POINT, WITH A BROADER"
         titleBold="FDRE / RTC-READY PLATFORM STRATEGY."
         description="The current portfolio is solar-led because that is where immediate operating and development visibility exists. The strategy is broader: build, own and operate renewable assets that can support utility-scale PPAs, FDRE, RTC, hybrid supply and storage-backed structures."
-        imageSrc="/images/heroes/portfolio.jpg"
-        imageAlt="Geometric desert solar utility rows extending under deep dark twilight sky"
+        imageSrc="/images/heroes/portfolio-renewable.png"
+        imageAlt="Integrated clean energy portfolio with solar photovoltaic arrays, wind turbines and modern facility against city skyline"
+        imagePosition="center 50%"
       />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-8 sm:pt-12">
-
         <SlideInBottom className="mb-20">
           <PortfolioMap />
+        </SlideInBottom>
+
+        {/* Verified Facility Showcase with Segmented Filtering & Video Badges */}
+        <SlideInBottom className="mb-24">
+          <div className="mb-8">
+            <span className="font-mono text-xs uppercase tracking-widest text-green font-semibold block mb-2">
+              Verified Project Showcase
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-heading font-bold text-ink">
+              Operating Assets &amp; Strategic <span className="text-green">Interconnect Hubs</span>
+            </h2>
+          </div>
+          <ProjectShowcaseGrid />
         </SlideInBottom>
       </div>
 
