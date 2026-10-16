@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function PlatformPage() {
   return (
-    <div className="pb-24">
+    <div className="pb-0">
       {/* Dark Hero Header Extending Behind Fixed Navbar */}
       <PageHeroHeader
         eyebrow="Operating Platform"
@@ -29,47 +29,55 @@ export default function PlatformPage() {
         imagePosition="center center"
       />
 
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-8 sm:pt-12">
-
-        {/* Central 5-Stage Interactive Flow — Glides from Downside */}
-        <SlideInBottom className="mb-20">
-          <PlatformFlow />
-        </SlideInBottom>
-
-        {/* Capabilities Grid — Glides from Downside */}
-        <SlideInBottom delay={0.2} className="mb-20">
-          <div className="max-w-2xl mb-8">
-            <span className="font-mono text-xs uppercase tracking-widest text-amber font-semibold block mb-2">
-              Architecture Pillars
-            </span>
-            <h3 className="text-2xl sm:text-3xl font-bold text-ink">
-              Core Platform Capabilities &amp; Design Standards
-            </h3>
-          </div>
-          <CapabilitiesGrid />
-        </SlideInBottom>
-      </div>
-
-      <MediaSplitSection
-        eyebrow="Integration Discipline"
-        titleLight="From raw geographical resource to"
-        titleBold="dependable delivered power."
-        lead="Our operating platform bridges the physical realities of grid substations, land aggregation, and weather variance with institutional finance and long-term legal structuring."
-        imageSrc="/images/solar-substation.jpg"
-        imageAlt="Eleverve Green solar power substation infrastructure"
-        imageCaption="Substation Interconnection & Evacuation Assets"
-        imagePosition="right"
-      >
-        <div className="pt-2">
-          <Link
-            href="/solutions"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-green text-white font-heading font-medium text-sm hover:shadow-glow transition-all"
-          >
-            <span>View Contracting Solutions</span>
-            <ArrowRight className="w-4 h-4" />
-          </Link>
+      {/* SECTION 1: Flow Pipeline (LIGHT THEME) */}
+      <section className="w-full py-16 sm:py-20 section-light">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          <SlideInBottom className="mb-4">
+            <PlatformFlow />
+          </SlideInBottom>
         </div>
-      </MediaSplitSection>
+      </section>
+
+      {/* SECTION 2: Capabilities Grid (FULL-WIDTH THEME BREAK) */}
+      <section className="w-full py-20 section-theme-break">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          <SlideInBottom delay={0.2} className="mb-4">
+            <div className="max-w-2xl mb-8">
+              <span className="font-mono text-xs uppercase tracking-widest text-emerald-400 font-semibold block mb-2">
+                Architecture Pillars
+              </span>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white">
+                Core Platform Capabilities &amp; Design Standards
+              </h3>
+            </div>
+            <CapabilitiesGrid />
+          </SlideInBottom>
+        </div>
+      </section>
+
+      {/* SECTION 3: Integration Discipline (LIGHT THEME) */}
+      <section className="w-full py-20 section-light">
+        <MediaSplitSection
+          eyebrow="Integration Discipline"
+          titleLight="From raw geographical resource to"
+          titleBold="dependable delivered power."
+          lead="Our operating platform bridges the physical realities of grid substations, land aggregation, and weather variance with institutional finance and long-term legal structuring."
+          imageSrc="/images/solar-substation.jpg"
+          imageAlt="Eleverve Green solar power substation infrastructure"
+          imageCaption="Substation Interconnection & Evacuation Assets"
+          imagePosition="right"
+        >
+          <div className="pt-2">
+            <Link
+              href="/solutions"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-none bg-emerald-500 text-black font-heading font-semibold text-sm hover:bg-emerald-400 transition-all shadow-[0_0_20px_rgba(52,211,153,0.3)]"
+            >
+              <span>View Contracting Solutions</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </MediaSplitSection>
+      </section>
     </div>
   );
 }

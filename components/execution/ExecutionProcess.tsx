@@ -164,7 +164,7 @@ export function ExecutionProcess() {
                 />
 
                 {/* Top Image Banner on Each Phase Tile */}
-                <div className="relative w-full h-36 sm:h-40 overflow-hidden rounded-none border-b border-neutral-200 dark:border-neutral-800 bg-neutral-900">
+                <div className="relative w-full h-52 sm:h-56 overflow-hidden rounded-none border-b border-neutral-200 dark:border-neutral-800 bg-neutral-900">
                   <Image
                     src={phaseImage}
                     alt={phase.name}
@@ -172,10 +172,11 @@ export function ExecutionProcess() {
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/40 group-hover:opacity-85 transition-opacity duration-500 pointer-events-none" />
+                  {/* High contrast gradient overlay for clear text readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-black/35 group-hover:opacity-90 transition-opacity duration-500 pointer-events-none" />
 
-                  {/* Overlays on Image */}
-                  <div className="absolute top-3 left-3 z-10 flex items-center gap-1.5 px-2.5 py-1 bg-black/65 backdrop-blur-md border border-white/20 text-white rounded-none">
+                  {/* Overlays on Image - Top badges */}
+                  <div className="absolute top-3 left-3 z-10 flex items-center gap-1.5 px-2.5 py-1 bg-black/70 backdrop-blur-md border border-white/20 text-white rounded-none">
                     <span
                       className={cn(
                         "w-1.5 h-1.5 rounded-full transition-transform duration-300 group-hover:scale-125",
@@ -184,7 +185,7 @@ export function ExecutionProcess() {
                           : "bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]"
                       )}
                     />
-                    <span className="font-mono text-[10px] font-semibold tracking-wider uppercase">
+                    <span className="font-mono text-[10px] font-semibold tracking-wider uppercase text-neutral-200">
                       PHASE // {phase.phase}
                     </span>
                   </div>
@@ -192,37 +193,39 @@ export function ExecutionProcess() {
                   <div
                     className={cn(
                       "absolute top-3 right-3 z-10 p-1.5 rounded-none border backdrop-blur-md transition-all duration-300",
-                      "bg-black/50 text-white/80 border-white/20 group-hover:bg-green group-hover:text-white group-hover:border-green group-hover:scale-105"
+                      "bg-black/60 text-white/90 border-white/20 group-hover:bg-green group-hover:text-white group-hover:border-green group-hover:scale-105"
                     )}
                   >
                     {getPhaseIcon(phase.phase)}
                   </div>
-                </div>
 
-                {/* Card Body */}
-                <div className="p-6 flex flex-col flex-1 justify-between bg-white dark:bg-neutral-950 transition-colors duration-300">
-                  <div>
-                    <h4 className="text-xl font-bold text-ink tracking-tight mb-1.5 group-hover:text-green transition-colors duration-300">
+                  {/* Headline & Title Text on Image */}
+                  <div className="absolute bottom-3 left-3 right-3 z-20">
+                    <h4 className="text-xl sm:text-2xl font-bold font-heading text-white tracking-tight drop-shadow-md group-hover:text-emerald-300 transition-colors duration-300 mb-1">
                       {phase.name}
                     </h4>
-
                     <p
                       className={cn(
-                        "text-xs font-semibold mb-3 font-mono",
-                        isBluePhase ? "text-sky-600 dark:text-sky-400" : "text-emerald-600 dark:text-emerald-400"
+                        "text-xs font-semibold font-mono leading-snug drop-shadow-sm line-clamp-2",
+                        isBluePhase ? "text-sky-300" : "text-emerald-300"
                       )}
                     >
                       {phase.title}
                     </p>
+                  </div>
+                </div>
 
-                    <p className="text-xs text-soft leading-relaxed mb-6 font-normal">
+                {/* Card Body */}
+                <div className="p-5 flex flex-col flex-1 justify-between bg-white dark:bg-neutral-900 transition-colors duration-300">
+                  <div>
+                    <p className="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed mb-5 font-normal">
                       {phase.detail}
                     </p>
                   </div>
 
-                  <div className="pt-4 border-t border-neutral-100 dark:border-neutral-800/80 space-y-1.5">
+                  <div className="pt-4 border-t border-neutral-100 dark:border-neutral-800 space-y-2">
                     {phase.activities.map((act, i) => (
-                      <div key={i} className="text-[11px] font-mono text-soft flex items-center gap-2">
+                      <div key={i} className="text-[11px] font-mono text-neutral-600 dark:text-neutral-400 flex items-center gap-2">
                         <span
                           className={cn(
                             "w-1 h-1 rounded-none flex-shrink-0",

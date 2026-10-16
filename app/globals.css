@@ -38,6 +38,116 @@ body[data-theme="white"] {
   --grid-line: rgba(0, 135, 78, 0.04);
 }
 
+/* FULL-WIDTH EDITORIAL PAGE BREAK SECTIONS (SQUARESPACE / MIDNIGHT BURST STYLE) */
+.section-theme-break {
+  background-color: #062822 !important;
+  background-image: 
+    radial-gradient(ellipse 90% 50% at 50% 0%, rgba(52, 211, 153, 0.14), transparent),
+    radial-gradient(ellipse 70% 40% at 50% 100%, rgba(56, 189, 248, 0.08), transparent);
+  color: #ffffff;
+  --bg: #062822;
+  --bg2: #08332c;
+  --bg3: #0c3e35;
+  --panel: rgba(255, 255, 255, 0.05);
+  --panel2: rgba(255, 255, 255, 0.08);
+  --ink: #ffffff;
+  --soft: rgba(255, 255, 255, 0.85);
+  --faint: rgba(255, 255, 255, 0.60);
+  --line: rgba(52, 211, 153, 0.22);
+  --line-strong: rgba(52, 211, 153, 0.45);
+  --green: #34d399;
+  border-top: 1px solid rgba(52, 211, 153, 0.22);
+  border-bottom: 1px solid rgba(52, 211, 153, 0.22);
+}
+
+.section-theme-break h1,
+.section-theme-break h2,
+.section-theme-break h3,
+.section-theme-break h4,
+.section-theme-break .text-ink {
+  color: #ffffff;
+}
+
+.section-theme-break p,
+.section-theme-break .text-soft {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.section-theme-break .text-faint {
+  color: rgba(255, 255, 255, 0.60);
+}
+
+/* LIGHT CONTAINERS INSIDE DARK BREAK SECTIONS */
+.section-theme-break .bg-white,
+.section-theme-break .bg-neutral-50,
+.section-theme-break .bg-neutral-100 {
+  --ink: #0e1412 !important;
+  --soft: #374151 !important;
+  --faint: #6b7280 !important;
+  color: #0e1412 !important;
+}
+
+.section-theme-break .bg-white h1,
+.section-theme-break .bg-white h2,
+.section-theme-break .bg-white h3,
+.section-theme-break .bg-white h4,
+.section-theme-break .bg-neutral-50 h1,
+.section-theme-break .bg-neutral-50 h2,
+.section-theme-break .bg-neutral-50 h3,
+.section-theme-break .bg-neutral-50 h4,
+.section-theme-break .bg-white .text-ink,
+.section-theme-break .bg-white strong {
+  color: #0e1412 !important;
+}
+
+.section-theme-break .bg-white p,
+.section-theme-break .bg-neutral-50 p,
+.section-theme-break .bg-white .text-soft {
+  color: #374151 !important;
+}
+
+.section-theme-break .bg-white .text-faint {
+  color: #6b7280 !important;
+}
+
+.section-theme-break .bg-white .text-neutral-900 {
+  color: #111827 !important;
+}
+
+.section-theme-break .bg-white .text-neutral-800 {
+  color: #1f2937 !important;
+}
+
+.section-theme-break .bg-white .text-neutral-700 {
+  color: #374151 !important;
+}
+
+.section-theme-break .bg-white .text-neutral-600 {
+  color: #4b5563 !important;
+}
+
+.section-theme-break .bg-white .text-neutral-500 {
+  color: #6b7280 !important;
+}
+
+.section-light {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  --bg: #ffffff;
+  --bg2: #f8fafc;
+  --bg3: #f1f5f9;
+  --panel: #edfcf2;
+  --panel2: #f0f7ff;
+  --ink: #000000;
+  --soft: rgba(0, 0, 0, 0.82);
+  --faint: rgba(0, 0, 0, 0.55);
+  --line: rgba(0, 135, 78, 0.12);
+  --line-strong: rgba(0, 135, 78, 0.25);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+
 /* MODE 2 — PURE BLACK (DEEP BLACK + LOGO GREEN + SKY BLUE MIX) */
 body[data-theme="black"] {
   --theme-name: "black";

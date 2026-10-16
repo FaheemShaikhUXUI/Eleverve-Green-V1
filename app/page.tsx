@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { HeroVideo } from "@/components/hero/HeroVideo";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { MediaSplitSection } from "@/components/ui/MediaSplitSection";
@@ -7,15 +8,17 @@ import { PlatformFlow } from "@/components/platform/PlatformFlow";
 import { CapabilitiesGrid } from "@/components/platform/CapabilitiesGrid";
 import { SolutionCards } from "@/components/solutions/SolutionCards";
 import { ResourceSimulator } from "@/components/technology/ResourceSimulator";
+import { EnergyDayCycleVisualizer } from "@/components/technology/EnergyDayCycleVisualizer";
 import { ExecutionProcess } from "@/components/execution/ExecutionProcess";
 import { PortfolioMap } from "@/components/portfolio/PortfolioMap";
+import { ProjectShowcaseGrid } from "@/components/portfolio/ProjectShowcaseGrid";
 import { ESGSection } from "@/components/esg/ESGSection";
 import { TeamGrid } from "@/components/team/TeamGrid";
 import { EcosystemSection } from "@/components/team/EcosystemSection";
 import { ContactSection } from "@/components/contact/ContactSection";
 import { companyData } from "@/data/company";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, ShieldCheck, Zap, Activity, Layers, ArrowUpRight } from "lucide-react";
 
 export default function HomePage() {
   return (
@@ -23,8 +26,8 @@ export default function HomePage() {
       {/* 1. CINEMATIC HERO */}
       <HeroVideo />
 
-      {/* 2. OUR MODEL SECTION */}
-      <section id="model" className="py-24 bg-bg border-t border-line scroll-mt-20">
+      {/* 2. OUR MODEL SECTION (LIGHT THEME) */}
+      <section id="model" className="py-24 section-light scroll-mt-20">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <SectionHeader
             eyebrow="What We Are"
@@ -33,42 +36,180 @@ export default function HomePage() {
             description="We’re not a build-and-flip developer or a passive investor. We own, operate and stand behind the delivered energy — through long-term utility PPAs and managed Energy-as-a-Service, whichever fits the offtaker."
           />
 
-          {/* 3 Core Differentiator Cards */}
+          {/* 3 Core Differentiator Cards - Latest Architectural Sharp Tiles */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-            <div className="p-8 bg-panel border border-line rounded-3xl hover:border-green/40 transition-all group">
-              <div className="w-10 h-10 rounded-2xl bg-green/10 text-green flex items-center justify-center font-mono text-sm font-semibold mb-6">
-                01
+            {/* Tile 01 */}
+            <div className="rounded-none border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950 transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-neutral-400 dark:hover:border-neutral-600 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.12)] dark:hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.6)] flex flex-col group overflow-hidden relative">
+              {/* Luminous Top Hover Beam */}
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-green to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-30" />
+
+              {/* Top Image Banner */}
+              <div className="relative w-full h-48 sm:h-52 overflow-hidden rounded-none border-b border-neutral-200 dark:border-neutral-800 bg-neutral-900">
+                <Image
+                  src="/images/solar-substation.jpg"
+                  alt="Owner-operator, not a developer"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/25 group-hover:opacity-90 transition-opacity duration-500 pointer-events-none" />
+
+                {/* Overlays on Image */}
+                <div className="absolute top-3.5 left-3.5 z-10 flex items-center gap-2 px-2.5 py-1 bg-black/65 backdrop-blur-md border border-white/20 text-white rounded-none transition-transform duration-300 group-hover:translate-x-0.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.9)] transition-transform duration-300 group-hover:scale-125" />
+                  <span className="font-mono text-[10px] font-semibold tracking-wider uppercase">
+                    01 · Asset Stewardship
+                  </span>
+                </div>
+
+                <div className="absolute top-3.5 right-3.5 z-10 p-2 rounded-none border border-white/20 bg-black/50 text-white/90 backdrop-blur-md group-hover:bg-green group-hover:text-white group-hover:border-green group-hover:scale-105 transition-all duration-300">
+                  <ShieldCheck className="w-4 h-4" />
+                </div>
+
+                <div className="absolute bottom-3 left-3.5 right-3.5 z-10">
+                  <span className="font-mono text-[11px] font-medium tracking-wide text-emerald-300 uppercase drop-shadow-sm">
+                    25-Year Lifecycle Horizon
+                  </span>
+                </div>
               </div>
-              <h3 className="font-heading text-xl font-medium text-ink mb-3">
-                Owner-operator, not a developer
-              </h3>
-              <p className="text-sm text-soft leading-relaxed">
-                We don’t build to flip. We own and operate for the long term, accountable for asset performance and generation yield long after commissioning.
-              </p>
+
+              {/* Card Body */}
+              <div className="p-6 sm:p-7 flex flex-col justify-between flex-1">
+                <div>
+                  <h3 className="font-heading text-xl font-bold tracking-tight text-ink dark:text-white mb-3 group-hover:text-green dark:group-hover:text-emerald-400 transition-colors duration-300 leading-snug">
+                    Owner-operator, not a developer
+                  </h3>
+                  <p className="text-sm text-soft dark:text-neutral-300 leading-relaxed font-normal mb-6">
+                    We don’t build to flip. We own and operate for the long term, accountable for asset performance and generation yield long after commissioning.
+                  </p>
+                </div>
+
+                {/* Bottom Spec Footer */}
+                <div className="pt-4 border-t border-neutral-100 dark:border-neutral-800/80 flex items-center justify-between text-xs font-mono">
+                  <span className="text-soft dark:text-neutral-400 uppercase tracking-wider">
+                    Stewardship · Long-Term
+                  </span>
+                  <span className="inline-flex items-center gap-1 text-green dark:text-emerald-400 font-semibold group-hover:translate-x-1 transition-transform duration-300">
+                    Direct Operations <ArrowUpRight className="w-3.5 h-3.5" />
+                  </span>
+                </div>
+              </div>
             </div>
 
-            <div className="p-8 bg-panel-2 border border-blue/20 rounded-3xl hover:border-blue/50 transition-all group">
-              <div className="w-10 h-10 rounded-2xl bg-blue/10 text-blue flex items-center justify-center font-mono text-sm font-semibold mb-6">
-                02
+            {/* Tile 02 */}
+            <div className="rounded-none border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950 transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-neutral-400 dark:hover:border-neutral-600 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.12)] dark:hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.6)] flex flex-col group overflow-hidden relative">
+              {/* Luminous Top Hover Beam (Sky Blue) */}
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-sky-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-30" />
+
+              {/* Top Image Banner */}
+              <div className="relative w-full h-48 sm:h-52 overflow-hidden rounded-none border-b border-neutral-200 dark:border-neutral-800 bg-neutral-900">
+                <Image
+                  src="/images/bess-facility.jpg"
+                  alt="Two ways to contract"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/25 group-hover:opacity-90 transition-opacity duration-500 pointer-events-none" />
+
+                {/* Overlays on Image */}
+                <div className="absolute top-3.5 left-3.5 z-10 flex items-center gap-2 px-2.5 py-1 bg-black/65 backdrop-blur-md border border-white/20 text-white rounded-none transition-transform duration-300 group-hover:translate-x-0.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-sky-400 shadow-[0_0_8px_rgba(56,189,248,0.9)] transition-transform duration-300 group-hover:scale-125" />
+                  <span className="font-mono text-[10px] font-semibold tracking-wider uppercase">
+                    02 · Commercial Architecture
+                  </span>
+                </div>
+
+                <div className="absolute top-3.5 right-3.5 z-10 p-2 rounded-none border border-white/20 bg-black/50 text-white/90 backdrop-blur-md group-hover:bg-blue group-hover:text-white group-hover:border-blue group-hover:scale-105 transition-all duration-300">
+                  <Layers className="w-4 h-4" />
+                </div>
+
+                <div className="absolute bottom-3 left-3.5 right-3.5 z-10">
+                  <span className="font-mono text-[11px] font-medium tracking-wide text-sky-300 uppercase drop-shadow-sm">
+                    Utility PPA &amp; EaaS Options
+                  </span>
+                </div>
               </div>
-              <h3 className="font-heading text-xl font-medium text-ink mb-3">
-                Two ways to contract
-              </h3>
-              <p className="text-sm text-soft leading-relaxed">
-                Buy through a long-term utility-scale PPA, or as a managed Energy-as-a-Service — generation, firming, scheduling, billing and compliance bundled into one delivered outcome.
-              </p>
+
+              {/* Card Body */}
+              <div className="p-6 sm:p-7 flex flex-col justify-between flex-1">
+                <div>
+                  <h3 className="font-heading text-xl font-bold tracking-tight text-ink dark:text-white mb-3 group-hover:text-blue dark:group-hover:text-sky-400 transition-colors duration-300 leading-snug">
+                    Two ways to contract
+                  </h3>
+                  <p className="text-sm text-soft dark:text-neutral-300 leading-relaxed font-normal mb-6">
+                    Buy through a long-term utility-scale PPA, or as a managed Energy-as-a-Service — generation, firming, scheduling, billing and compliance bundled into one delivered outcome.
+                  </p>
+                </div>
+
+                {/* Bottom Spec Footer */}
+                <div className="pt-4 border-t border-neutral-100 dark:border-neutral-800/80 flex items-center justify-between text-xs font-mono">
+                  <span className="text-soft dark:text-neutral-400 uppercase tracking-wider">
+                    Structure · PPA | EaaS
+                  </span>
+                  <span className="inline-flex items-center gap-1 text-blue dark:text-sky-400 font-semibold group-hover:translate-x-1 transition-transform duration-300">
+                    Dual Contracting <ArrowUpRight className="w-3.5 h-3.5" />
+                  </span>
+                </div>
+              </div>
             </div>
 
-            <div className="p-8 bg-panel border border-line rounded-3xl hover:border-green/40 transition-all group">
-              <div className="w-10 h-10 rounded-2xl bg-green/10 text-green flex items-center justify-center font-mono text-sm font-semibold mb-6">
-                03
+            {/* Tile 03 */}
+            <div className="rounded-none border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950 transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-neutral-400 dark:hover:border-neutral-600 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.12)] dark:hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.6)] flex flex-col group overflow-hidden relative">
+              {/* Luminous Top Hover Beam */}
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-green to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-30" />
+
+              {/* Top Image Banner */}
+              <div className="relative w-full h-48 sm:h-52 overflow-hidden rounded-none border-b border-neutral-200 dark:border-neutral-800 bg-neutral-900">
+                <Image
+                  src="/images/dispatch-center.jpg"
+                  alt="Outcome, not just capital"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/25 group-hover:opacity-90 transition-opacity duration-500 pointer-events-none" />
+
+                {/* Overlays on Image */}
+                <div className="absolute top-3.5 left-3.5 z-10 flex items-center gap-2 px-2.5 py-1 bg-black/65 backdrop-blur-md border border-white/20 text-white rounded-none transition-transform duration-300 group-hover:translate-x-0.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.9)] transition-transform duration-300 group-hover:scale-125" />
+                  <span className="font-mono text-[10px] font-semibold tracking-wider uppercase">
+                    03 · Delivered Outcome
+                  </span>
+                </div>
+
+                <div className="absolute top-3.5 right-3.5 z-10 p-2 rounded-none border border-white/20 bg-black/50 text-white/90 backdrop-blur-md group-hover:bg-green group-hover:text-white group-hover:border-green group-hover:scale-105 transition-all duration-300">
+                  <Activity className="w-4 h-4" />
+                </div>
+
+                <div className="absolute bottom-3 left-3.5 right-3.5 z-10">
+                  <span className="font-mono text-[11px] font-medium tracking-wide text-emerald-300 uppercase drop-shadow-sm">
+                    Performance-Indexed SLA
+                  </span>
+                </div>
               </div>
-              <h3 className="font-heading text-xl font-medium text-ink mb-3">
-                Outcome, not just capital
-              </h3>
-              <p className="text-sm text-soft leading-relaxed">
-                We’re not a passive investor allocating capital and waiting. We deliver — and are measured on — reliable, delivered energy matching the offtaker’s contracted load.
-              </p>
+
+              {/* Card Body */}
+              <div className="p-6 sm:p-7 flex flex-col justify-between flex-1">
+                <div>
+                  <h3 className="font-heading text-xl font-bold tracking-tight text-ink dark:text-white mb-3 group-hover:text-green dark:group-hover:text-emerald-400 transition-colors duration-300 leading-snug">
+                    Outcome, not just capital
+                  </h3>
+                  <p className="text-sm text-soft dark:text-neutral-300 leading-relaxed font-normal mb-6">
+                    We’re not a passive investor allocating capital and waiting. We deliver — and are measured on — reliable, delivered energy matching the offtaker’s contracted load.
+                  </p>
+                </div>
+
+                {/* Bottom Spec Footer */}
+                <div className="pt-4 border-t border-neutral-100 dark:border-neutral-800/80 flex items-center justify-between text-xs font-mono">
+                  <span className="text-soft dark:text-neutral-400 uppercase tracking-wider">
+                    Metric · Availability &amp; Yield
+                  </span>
+                  <span className="inline-flex items-center gap-1 text-green dark:text-emerald-400 font-semibold group-hover:translate-x-1 transition-transform duration-300">
+                    Delivered MWh <ArrowUpRight className="w-3.5 h-3.5" />
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -97,8 +238,8 @@ export default function HomePage() {
         </MediaSplitSection>
       </section>
 
-      {/* 3. WHY NOW SECTION */}
-      <section id="why" className="py-24 bg-bg-2 border-t border-line scroll-mt-20">
+      {/* 3. WHY NOW SECTION (FULL-WIDTH THEME BREAK) */}
+      <section id="why" className="py-24 section-theme-break scroll-mt-20">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <SectionHeader
             eyebrow="Why Now"
@@ -193,8 +334,8 @@ export default function HomePage() {
         </MediaSplitSection>
       </section>
 
-      {/* 4. PLATFORM SECTION */}
-      <section id="platform" className="py-24 bg-bg border-t border-line scroll-mt-20">
+      {/* 4. PLATFORM SECTION (LIGHT THEME) */}
+      <section id="platform" className="py-24 section-light scroll-mt-20">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <SectionHeader
             eyebrow="The Platform"
@@ -213,8 +354,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. SOLUTIONS SECTION */}
-      <section id="solutions" className="py-24 bg-bg-2 border-t border-line scroll-mt-20">
+      {/* 5. SOLUTIONS SECTION (FULL-WIDTH THEME BREAK) */}
+      <section id="solutions" className="py-24 section-theme-break scroll-mt-20">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <SectionHeader
             eyebrow="Solutions"
@@ -253,8 +394,8 @@ export default function HomePage() {
         </MediaSplitSection>
       </section>
 
-      {/* 6. TECHNOLOGY SECTION */}
-      <section id="technology" className="py-24 bg-bg border-t border-line scroll-mt-20">
+      {/* 6. TECHNOLOGY SECTION (LIGHT THEME) */}
+      <section id="technology" className="py-24 section-light scroll-mt-20">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <SectionHeader
             eyebrow="Technology-Agnostic Delivery"
@@ -263,13 +404,28 @@ export default function HomePage() {
             description="We do not start with a preferred technology, nor do we force-fit a technology to a project. We begin with the offtaker’s contracted demand profile, the site conditions, the available resource, the grid interface and the required cost outcome."
           />
 
-          {/* Interactive 24-Hour Diurnal Dispatch Simulator */}
-          <ResourceSimulator />
+          {/* Interactive 24-Hour Diurnal Dispatch Simulator (Vibrant Energy Style) */}
+          <div className="mb-16">
+            <div className="mb-6 flex items-center justify-between">
+              <span className="font-mono text-xs uppercase tracking-widest text-emerald-500 font-bold">
+                ● 24-Hour Active Firming Curve
+              </span>
+              <span className="text-xs font-mono text-soft">
+                Midday Solar Surplus → Evening Peak BESS Dispatch
+              </span>
+            </div>
+            <EnergyDayCycleVisualizer />
+          </div>
+
+          {/* Multi-Resource Optimization Simulator */}
+          <div className="pt-8">
+            <ResourceSimulator />
+          </div>
         </div>
       </section>
 
-      {/* 7. EXECUTION SECTION */}
-      <section id="execution" className="py-24 bg-bg-2 border-t border-line scroll-mt-20">
+      {/* 7. EXECUTION SECTION (FULL-WIDTH THEME BREAK) */}
+      <section id="execution" className="py-24 section-theme-break scroll-mt-20">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <SectionHeader
             eyebrow="How We Execute"
@@ -283,8 +439,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 8. PORTFOLIO SECTION */}
-      <section id="portfolio" className="py-24 bg-bg border-t border-line scroll-mt-20">
+      {/* 8. PORTFOLIO SECTION (LIGHT THEME) */}
+      <section id="portfolio" className="py-24 section-light scroll-mt-20">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <SectionHeader
             eyebrow="Asset Portfolio"
@@ -294,12 +450,27 @@ export default function HomePage() {
           />
 
           {/* Interactive India Map & State Assets */}
-          <PortfolioMap />
+          <div className="mb-20">
+            <PortfolioMap />
+          </div>
+
+          {/* Candi Solar / CleanMax Inspired Facility Showcase with Video Badges */}
+          <div className="pt-4">
+            <div className="mb-8">
+              <span className="font-mono text-xs uppercase tracking-widest text-emerald-500 font-bold block mb-2">
+                Operational Facility Showcase
+              </span>
+              <h3 className="text-2xl sm:text-3xl font-heading font-bold text-ink">
+                Verified Infrastructure &amp; <span className="text-emerald-500">Video Walkthroughs</span>
+              </h3>
+            </div>
+            <ProjectShowcaseGrid />
+          </div>
         </div>
       </section>
 
-      {/* 9. ESG, HSE & GOVERNANCE SECTION */}
-      <section id="esg" className="py-24 bg-bg-2 border-t border-line scroll-mt-20">
+      {/* 9. ESG, HSE & GOVERNANCE SECTION (FULL-WIDTH THEME BREAK) */}
+      <section id="esg" className="py-24 section-theme-break scroll-mt-20">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <SectionHeader
             eyebrow="ESG, HSE and Governance"
@@ -312,8 +483,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 10. TEAM & TRACK RECORD SECTION */}
-      <section id="team" className="py-24 bg-bg border-t border-line scroll-mt-20">
+      {/* 10. TEAM & TRACK RECORD SECTION (LIGHT THEME) */}
+      <section id="team" className="py-24 section-light scroll-mt-20">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <SectionHeader
             eyebrow="Team and Track Record"
@@ -391,8 +562,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 11. CONTACT SECTION */}
-      <section id="contact" className="py-24 bg-bg-2 border-t border-line scroll-mt-20">
+      {/* 11. CONTACT SECTION (FULL-WIDTH THEME BREAK) */}
+      <section id="contact" className="py-24 section-theme-break scroll-mt-20">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <SectionHeader
             eyebrow="Initiate Dialogue"

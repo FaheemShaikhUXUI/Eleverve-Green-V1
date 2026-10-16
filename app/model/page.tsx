@@ -16,7 +16,7 @@ import { StaggerGrid, StaggerItem, SlideInBottom } from "@/components/ui/PageTra
 
 export default function ModelPage() {
   return (
-    <div className="pb-24">
+    <div className="pb-0">
       {/* Dark Hero Header Extending Behind Fixed Navbar */}
       <PageHeroHeader
         eyebrow="Operating Architecture"
@@ -28,7 +28,9 @@ export default function ModelPage() {
         imagePosition="center 60%"
       />
 
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-8 sm:pt-12">
+      {/* SECTION 1: 3 Core Principles (LIGHT THEME) */}
+      <section className="w-full py-16 sm:py-20 section-light">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 
         {/* 3 Core Operating Principles — Text on Image, 0 Spacing, Zero Curves (Sharp Elegant Architectural Grid) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-neutral-800/80 mb-20 overflow-hidden shadow-2xl rounded-none bg-black">
@@ -57,7 +59,7 @@ export default function ModelPage() {
 
             {/* Bottom Content: Headline + Description + Divider */}
             <div className="relative z-10">
-              <h3 className="font-heading text-2xl sm:text-3xl font-bold text-white tracking-tight mb-3 leading-tight drop-shadow-md">
+              <h3 className="font-heading text-2xl sm:text-3xl font-bold !text-white text-white tracking-tight mb-3 leading-tight drop-shadow-md" style={{ color: '#ffffff' }}>
                 Owner-operator, not a developer
               </h3>
               <p className="text-sm text-neutral-200 leading-relaxed font-normal mb-6 drop-shadow-xs">
@@ -96,7 +98,7 @@ export default function ModelPage() {
 
             {/* Bottom Content: Headline + Description + Divider */}
             <div className="relative z-10">
-              <h3 className="font-heading text-2xl sm:text-3xl font-bold text-white tracking-tight mb-3 leading-tight drop-shadow-md">
+              <h3 className="font-heading text-2xl sm:text-3xl font-bold !text-white text-white tracking-tight mb-3 leading-tight drop-shadow-md" style={{ color: '#ffffff' }}>
                 Two ways to contract
               </h3>
               <p className="text-sm text-neutral-200 leading-relaxed font-normal mb-6 drop-shadow-xs">
@@ -135,7 +137,7 @@ export default function ModelPage() {
 
             {/* Bottom Content: Headline + Description + Divider */}
             <div className="relative z-10">
-              <h3 className="font-heading text-2xl sm:text-3xl font-bold text-white tracking-tight mb-3 leading-tight drop-shadow-md">
+              <h3 className="font-heading text-2xl sm:text-3xl font-bold !text-white text-white tracking-tight mb-3 leading-tight drop-shadow-md" style={{ color: '#ffffff' }}>
                 Outcome, not just capital
               </h3>
               <p className="text-sm text-neutral-200 leading-relaxed font-normal mb-6 drop-shadow-xs">
@@ -149,109 +151,105 @@ export default function ModelPage() {
             </div>
           </div>
         </div>
+        </div>
+      </section>
 
-        {/* Model Comparison Matrix — Latest UI Trend, Zero Curves (rounded-none), Elegant Crisp White Theme */}
-        <div className="border border-neutral-200 bg-white mb-20 shadow-xl rounded-none overflow-hidden">
-          {/* Header Bar */}
-          <div className="p-8 sm:p-10 border-b border-neutral-200 flex flex-col md:flex-row md:items-end justify-between gap-6 bg-neutral-50/60">
-            <div className="max-w-2xl">
+      {/* SECTION 2: Model Comparison Matrix (FULL-WIDTH THEME BREAK) */}
+      <section className="w-full py-20 section-theme-break">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          {/* Frameless Section Header */}
+          <div className="mb-14 flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-white/15">
+            <div className="max-w-3xl">
               <div className="flex items-center gap-3 mb-3">
-                <span className="px-2.5 py-1 bg-emerald-50 border border-emerald-600/30 text-[10px] font-mono uppercase tracking-widest text-emerald-700 font-semibold rounded-none flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 bg-emerald-600 rounded-none inline-block animate-pulse"></span>
+                <span className="px-2.5 py-1 bg-emerald-500/15 border border-emerald-400/30 text-[10px] font-mono uppercase tracking-widest text-emerald-400 font-semibold rounded-none flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 bg-emerald-400 rounded-none inline-block animate-pulse"></span>
                   MODEL COMPARISON
                 </span>
-                <span className="font-mono text-xs text-neutral-400 tracking-wider">
+                <span className="font-mono text-xs text-white/50 tracking-wider">
                   // BENCHMARK ARCHITECTURE
                 </span>
               </div>
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-heading text-neutral-900 tracking-tight leading-tight">
+              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-white tracking-tight leading-tight">
                 Traditional Developer vs. Eleverve Green Operating Platform
               </h3>
             </div>
-            <div className="font-mono text-xs text-neutral-500 flex items-center gap-4 border-t md:border-t-0 md:border-l border-neutral-200 pt-4 md:pt-0 md:pl-6">
+            <div className="font-mono text-xs text-neutral-400 flex items-center gap-6 pt-4 md:pt-0">
               <div>
-                <div className="text-[10px] uppercase tracking-wider text-neutral-400">Contract Horizon</div>
-                <div className="text-neutral-900 font-semibold">25+ Years Aligned</div>
+                <div className="text-[10px] uppercase tracking-wider text-white/40">Contract Horizon</div>
+                <div className="text-white font-semibold">25+ Years Aligned</div>
               </div>
-              <div className="w-px h-8 bg-neutral-200"></div>
+              <div className="w-px h-8 bg-white/15"></div>
               <div>
-                <div className="text-[10px] uppercase tracking-wider text-neutral-400">Accountability</div>
-                <div className="text-emerald-700 font-semibold">Delivered MWh</div>
+                <div className="text-[10px] uppercase tracking-wider text-white/40">Accountability</div>
+                <div className="text-emerald-400 font-semibold">Delivered MWh</div>
               </div>
             </div>
           </div>
 
-          {/* 2-Column Side-by-Side Comparison Grid (gap-0, rounded-none) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-0 divide-y md:divide-y-0 md:divide-x divide-neutral-200">
+          {/* 2-Column Side-by-Side Comparison — Purely Frameless, Text in the Air */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
             {/* Column 01: Typical Build-and-Flip Developer */}
-            <div className="p-8 sm:p-10 bg-neutral-50/40 flex flex-col justify-between group hover:bg-neutral-50 transition-colors duration-300">
+            <div className="flex flex-col justify-between">
               <div>
-                <div className="flex items-center justify-between pb-6 mb-6 border-b border-neutral-200">
+                <div className="flex items-center justify-between pb-6 mb-8 border-b border-white/10">
                   <div>
-                    <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-400 block mb-1">
+                    <span className="font-mono text-[10px] uppercase tracking-widest text-rose-400/90 font-semibold block mb-1">
                       LEGACY MARKET STRUCTURE
                     </span>
-                    <h4 className="font-heading text-xl font-bold text-neutral-900 tracking-tight">
+                    <h4 className="font-heading text-xl sm:text-2xl font-bold text-white tracking-tight">
                       Typical Build-and-Flip Developer
                     </h4>
                   </div>
-                  <span className="px-2.5 py-1 bg-neutral-100 border border-neutral-300 text-neutral-600 font-mono text-[11px] rounded-none font-semibold">
+                  <span className="px-2.5 py-1 bg-rose-950/40 border border-rose-500/30 text-rose-300 font-mono text-[11px] rounded-none font-semibold">
                     TRANSACTIONAL
                   </span>
                 </div>
 
-                <ul className="space-y-4">
-                  <li className="flex items-start gap-3.5 p-4 bg-white border border-neutral-200/90 rounded-none shadow-xs transition-all hover:border-neutral-300">
-                    <div className="w-5 h-5 shrink-0 flex items-center justify-center bg-rose-50 border border-rose-300 text-rose-600 font-mono text-xs font-bold rounded-none mt-0.5">
-                      ✕
-                    </div>
+                {/* Text in the Air — No solid square card boxes, no frame */}
+                <ul className="space-y-6">
+                  <li className="flex items-start gap-4 pb-6 border-b border-white/5 last:border-0 last:pb-0">
+                    <span className="text-rose-400 font-bold text-base shrink-0 select-none mt-0.5">✕</span>
                     <div>
-                      <p className="text-sm font-semibold text-neutral-800 leading-snug">
+                      <p className="text-sm sm:text-base font-semibold text-neutral-200 leading-snug">
                         Sells capacity at COD or immediate milestone
                       </p>
-                      <span className="text-xs text-neutral-500 font-mono mt-0.5 block">
+                      <span className="text-xs text-neutral-400 font-mono mt-1 block">
                         Capital exits immediately post-commissioning
                       </span>
                     </div>
                   </li>
 
-                  <li className="flex items-start gap-3.5 p-4 bg-white border border-neutral-200/90 rounded-none shadow-xs transition-all hover:border-neutral-300">
-                    <div className="w-5 h-5 shrink-0 flex items-center justify-center bg-rose-50 border border-rose-300 text-rose-600 font-mono text-xs font-bold rounded-none mt-0.5">
-                      ✕
-                    </div>
+                  <li className="flex items-start gap-4 pb-6 border-b border-white/5 last:border-0 last:pb-0">
+                    <span className="text-rose-400 font-bold text-base shrink-0 select-none mt-0.5">✕</span>
                     <div>
-                      <p className="text-sm font-semibold text-neutral-800 leading-snug">
+                      <p className="text-sm sm:text-base font-semibold text-neutral-200 leading-snug">
                         Incentivized on lowest Capex over long-term reliability
                       </p>
-                      <span className="text-xs text-neutral-500 font-mono mt-0.5 block">
+                      <span className="text-xs text-neutral-400 font-mono mt-1 block">
                         Short-term procurement discounts maximize margin
                       </span>
                     </div>
                   </li>
 
-                  <li className="flex items-start gap-3.5 p-4 bg-white border border-neutral-200/90 rounded-none shadow-xs transition-all hover:border-neutral-300">
-                    <div className="w-5 h-5 shrink-0 flex items-center justify-center bg-rose-50 border border-rose-300 text-rose-600 font-mono text-xs font-bold rounded-none mt-0.5">
-                      ✕
-                    </div>
+                  <li className="flex items-start gap-4 pb-6 border-b border-white/5 last:border-0 last:pb-0">
+                    <span className="text-rose-400 font-bold text-base shrink-0 select-none mt-0.5">✕</span>
                     <div>
-                      <p className="text-sm font-semibold text-neutral-800 leading-snug">
+                      <p className="text-sm sm:text-base font-semibold text-neutral-200 leading-snug">
                         Disconnected from offtaker schedule deviations post-handover
                       </p>
-                      <span className="text-xs text-neutral-500 font-mono mt-0.5 block">
+                      <span className="text-xs text-neutral-400 font-mono mt-1 block">
                         No ongoing operational liability for generation gaps
                       </span>
                     </div>
                   </li>
 
-                  <li className="flex items-start gap-3.5 p-4 bg-white border border-neutral-200/90 rounded-none shadow-xs transition-all hover:border-neutral-300">
-                    <div className="w-5 h-5 shrink-0 flex items-center justify-center bg-rose-50 border border-rose-300 text-rose-600 font-mono text-xs font-bold rounded-none mt-0.5">
-                      ✕
-                    </div>
+                  <li className="flex items-start gap-4 pb-6 border-b border-white/5 last:border-0 last:pb-0">
+                    <span className="text-rose-400 font-bold text-base shrink-0 select-none mt-0.5">✕</span>
                     <div>
-                      <p className="text-sm font-semibold text-neutral-800 leading-snug">
+                      <p className="text-sm sm:text-base font-semibold text-neutral-200 leading-snug">
                         Offtaker bears balancing and curtailment risks
                       </p>
-                      <span className="text-xs text-neutral-500 font-mono mt-0.5 block">
+                      <span className="text-xs text-neutral-400 font-mono mt-1 block">
                         Commercial buyers manage DSM penalties and volatility
                       </span>
                     </div>
@@ -259,81 +257,74 @@ export default function ModelPage() {
                 </ul>
               </div>
 
-              <div className="mt-8 pt-4 border-t border-neutral-200 flex items-center justify-between text-xs font-mono text-neutral-500">
+              <div className="mt-8 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-neutral-400">
                 <span>RISK PROFILE</span>
-                <span className="text-rose-600 font-semibold">UNHEDGED OFF-TAKER RISK</span>
+                <span className="text-rose-400 font-semibold">UNHEDGED OFF-TAKER RISK</span>
               </div>
             </div>
 
             {/* Column 02: Eleverve Green Platform Model */}
-            <div className="p-8 sm:p-10 bg-emerald-50/20 flex flex-col justify-between relative group">
-              <div className="relative z-10">
-                <div className="flex items-center justify-between pb-6 mb-6 border-b border-emerald-300/80">
+            <div className="flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between pb-6 mb-8 border-b border-emerald-500/30">
                   <div>
-                    <span className="font-mono text-[10px] uppercase tracking-widest text-emerald-700 block mb-1 font-bold">
+                    <span className="font-mono text-[10px] uppercase tracking-widest text-emerald-400 block mb-1 font-bold">
                       OWNER-OPERATOR DISCIPLINE
                     </span>
-                    <h4 className="font-heading text-xl font-bold text-neutral-900 tracking-tight">
+                    <h4 className="font-heading text-xl sm:text-2xl font-bold text-white tracking-tight">
                       Eleverve Green Platform Model
                     </h4>
                   </div>
-                  <span className="px-2.5 py-1 bg-emerald-100 border border-emerald-300 text-emerald-800 font-mono text-[11px] font-bold rounded-none">
+                  <span className="px-2.5 py-1 bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 font-mono text-[11px] font-bold rounded-none">
                     STEWARDSHIP
                   </span>
                 </div>
 
-                <ul className="space-y-4">
-                  <li className="flex items-start gap-3.5 p-4 bg-white border border-emerald-200 rounded-none shadow-xs transition-all hover:border-emerald-400">
-                    <div className="w-5 h-5 shrink-0 flex items-center justify-center bg-emerald-100 border border-emerald-400 text-emerald-700 font-mono text-xs font-bold rounded-none mt-0.5">
-                      ✓
-                    </div>
+                {/* Text in the Air — Floating luminous items */}
+                <ul className="space-y-6">
+                  <li className="flex items-start gap-4 pb-6 border-b border-emerald-500/10 last:border-0 last:pb-0">
+                    <span className="text-emerald-400 font-bold text-base shrink-0 select-none mt-0.5">✓</span>
                     <div>
-                      <p className="text-sm font-bold text-neutral-900 leading-snug">
+                      <p className="text-sm sm:text-base font-semibold text-white leading-snug">
                         Retains asset ownership and operational control for 25+ years
                       </p>
-                      <span className="text-xs text-emerald-800/80 font-mono mt-0.5 block">
+                      <span className="text-xs text-emerald-300/80 font-mono mt-1 block">
                         Lifecycle stewardship with aligned long-term financial interest
                       </span>
                     </div>
                   </li>
 
-                  <li className="flex items-start gap-3.5 p-4 bg-white border border-emerald-200 rounded-none shadow-xs transition-all hover:border-emerald-400">
-                    <div className="w-5 h-5 shrink-0 flex items-center justify-center bg-emerald-100 border border-emerald-400 text-emerald-700 font-mono text-xs font-bold rounded-none mt-0.5">
-                      ✓
-                    </div>
+                  <li className="flex items-start gap-4 pb-6 border-b border-emerald-500/10 last:border-0 last:pb-0">
+                    <span className="text-emerald-400 font-bold text-base shrink-0 select-none mt-0.5">✓</span>
                     <div>
-                      <p className="text-sm font-bold text-neutral-900 leading-snug">
+                      <p className="text-sm sm:text-base font-semibold text-white leading-snug">
                         Tier-1 engineering designed for lifecycle degradation resilience
                       </p>
-                      <span className="text-xs text-emerald-800/80 font-mono mt-0.5 block">
+                      <span className="text-xs text-emerald-300/80 font-mono mt-1 block">
                         Over-specced balance-of-plant, Tier-1 inverters, and N-1 redundancy
                       </span>
                     </div>
                   </li>
 
-                  <li className="flex items-start gap-3.5 p-4 bg-white border border-emerald-200 rounded-none shadow-xs transition-all hover:border-emerald-400">
-                    <div className="w-5 h-5 shrink-0 flex items-center justify-center bg-emerald-100 border border-emerald-400 text-emerald-700 font-mono text-xs font-bold rounded-none mt-0.5">
-                      ✓
-                    </div>
+                  <li className="flex items-start gap-4 pb-6 border-b border-emerald-500/10 last:border-0 last:pb-0">
+                    <span className="text-emerald-400 font-bold text-base shrink-0 select-none mt-0.5">✓</span>
                     <div>
-                      <p className="text-sm font-bold text-neutral-900 leading-snug">
+                      <p className="text-sm sm:text-base font-semibold text-white leading-snug">
                         Active SLDC day-ahead scheduling and deviation mitigation
                       </p>
-                      <span className="text-xs text-emerald-800/80 font-mono mt-0.5 block">
+                      <span className="text-xs text-emerald-300/80 font-mono mt-1 block">
                         Algorithmic forecasting and real-time dispatch buffering
                       </span>
                     </div>
                   </li>
 
-                  <li className="flex items-start gap-3.5 p-4 bg-white border border-emerald-200 rounded-none shadow-xs transition-all hover:border-emerald-400">
-                    <div className="w-5 h-5 shrink-0 flex items-center justify-center bg-emerald-100 border border-emerald-400 text-emerald-700 font-mono text-xs font-bold rounded-none mt-0.5">
-                      ✓
-                    </div>
+                  <li className="flex items-start gap-4 pb-6 border-b border-emerald-500/10 last:border-0 last:pb-0">
+                    <span className="text-emerald-400 font-bold text-base shrink-0 select-none mt-0.5">✓</span>
                     <div>
-                      <p className="text-sm font-bold text-neutral-900 leading-snug">
+                      <p className="text-sm sm:text-base font-semibold text-white leading-snug">
                         SLA-guaranteed delivered energy blocks
                       </p>
-                      <span className="text-xs text-emerald-800/80 font-mono mt-0.5 block">
+                      <span className="text-xs text-emerald-300/80 font-mono mt-1 block">
                         Availability covenants with contractually bonded supply outcomes
                       </span>
                     </div>
@@ -341,36 +332,38 @@ export default function ModelPage() {
                 </ul>
               </div>
 
-              <div className="mt-8 pt-4 border-t border-emerald-300 flex items-center justify-between text-xs font-mono text-emerald-800 relative z-10">
+              <div className="mt-8 pt-4 border-t border-emerald-500/20 flex items-center justify-between text-xs font-mono text-emerald-400">
                 <span>OPERATING MODEL</span>
-                <span className="text-emerald-700 font-bold">100% PERFORMANCE GUARANTEED</span>
+                <span className="text-emerald-300 font-bold">100% PERFORMANCE GUARANTEED</span>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Editorial Media Split */}
-      <MediaSplitSection
-        eyebrow="Asset Architecture"
-        titleLight="Engineered around the"
-        titleBold="offtaker’s delivered-cost outcome."
-        lead="We build renewable power solutions around the offtaker’s contracted demand, the site, the available resource, the grid interface and the required delivered-cost outcome. Whether utility-scale or open access, our platform aligns all moving parts into a dependable power product."
-        imageSrc="/images/solar-substation.jpg"
-        imageAlt="Eleverve Green solar power substation infrastructure"
-        imageCaption="Substation Interconnection & Evacuation Assets"
-        imagePosition="right"
-      >
-        <div className="pt-2">
-          <Link
-            href="/platform"
-            className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-none bg-emerald-500 hover:bg-emerald-400 text-black font-mono font-semibold text-xs uppercase tracking-wider transition-all shadow-[0_0_20px_rgba(52,211,153,0.3)] hover:shadow-[0_0_30px_rgba(52,211,153,0.5)]"
-          >
-            <span>Inspect the 5-Stage Platform</span>
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-        </div>
-      </MediaSplitSection>
+      {/* SECTION 3: Asset Architecture (LIGHT THEME) */}
+      <section className="w-full py-20 section-light">
+        <MediaSplitSection
+          eyebrow="Asset Architecture"
+          titleLight="Engineered around the"
+          titleBold="offtaker’s delivered-cost outcome."
+          lead="We build renewable power solutions around the offtaker’s contracted demand, the site, the available resource, the grid interface and the required delivered-cost outcome. Whether utility-scale or open access, our platform aligns all moving parts into a dependable power product."
+          imageSrc="/images/solar-substation.jpg"
+          imageAlt="Eleverve Green solar power substation infrastructure"
+          imageCaption="Substation Interconnection & Evacuation Assets"
+          imagePosition="right"
+        >
+          <div className="pt-2">
+            <Link
+              href="/platform"
+              className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-none bg-emerald-500 hover:bg-emerald-400 text-black font-mono font-semibold text-xs uppercase tracking-wider transition-all shadow-[0_0_20px_rgba(52,211,153,0.3)] hover:shadow-[0_0_30px_rgba(52,211,153,0.5)]"
+            >
+              <span>Inspect the 5-Stage Platform</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </MediaSplitSection>
+      </section>
     </div>
   );
 }

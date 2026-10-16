@@ -165,7 +165,7 @@ export function ProjectShowcaseGrid() {
                   "relative px-3.5 py-2 text-xs font-mono font-medium transition-all duration-300 rounded-none cursor-pointer flex items-center gap-2 border",
                   isActive
                     ? "bg-green text-white border-green font-bold shadow-xs"
-                    : "bg-white dark:bg-neutral-950 text-neutral-600 dark:text-neutral-300 border-neutral-200 dark:border-neutral-800 hover:border-neutral-400 dark:hover:border-neutral-600 hover:text-ink"
+                    : "bg-white dark:bg-neutral-950 text-neutral-600 dark:text-neutral-300 border-neutral-200 dark:border-neutral-800 hover:border-neutral-400 dark:hover:border-neutral-600 hover:text-neutral-900 dark:hover:text-white"
                 )}
               >
                 <span>{tab.label}</span>
@@ -192,10 +192,10 @@ export function ProjectShowcaseGrid() {
         </div>
 
         {/* Live Facility Count & Telemetry Badge */}
-        <div className="flex items-center gap-3 px-3 py-1.5 bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 self-start lg:self-auto font-mono text-xs">
+        <div className="flex items-center gap-3 px-3 py-1.5 bg-white border border-neutral-200 self-start lg:self-auto font-mono text-xs">
           <span className="w-2 h-2 rounded-none bg-green animate-pulse" />
-          <span className="text-soft font-medium">
-            DISPLAYING: <strong className="text-ink">{filteredProjects.length} OF {projects.length}</strong> VERIFIED HUBS
+          <span className="text-neutral-600 font-medium">
+            DISPLAYING: <strong className="text-neutral-900">{filteredProjects.length} OF {projects.length}</strong> VERIFIED HUBS
           </span>
         </div>
       </div>
@@ -211,13 +211,13 @@ export function ProjectShowcaseGrid() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.98 }}
               transition={{ duration: 0.35, delay: idx * 0.05 }}
-              className="group rounded-none border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950 transition-all duration-500 ease-out flex flex-col justify-between hover:border-green hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.7)] relative"
+              className="group rounded-none border border-neutral-200 bg-white transition-all duration-500 ease-out flex flex-col justify-between hover:border-green hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] relative"
             >
               {/* Luminous Top Hover Beam */}
               <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-green to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-30" />
 
               {/* Card Image Banner */}
-              <div className="relative aspect-[16/10] overflow-hidden rounded-none border-b border-neutral-200 dark:border-neutral-800 bg-neutral-900">
+              <div className="relative aspect-[16/10] overflow-hidden rounded-none border-b border-neutral-200 bg-neutral-900">
                 <Image
                   src={project.imageSrc}
                   alt={project.name}
@@ -264,7 +264,7 @@ export function ProjectShowcaseGrid() {
               </div>
 
               {/* Card Body */}
-              <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between">
+              <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between bg-white text-neutral-900">
                 <div>
                   {/* Category Pill & ID */}
                   <div className="flex items-center justify-between gap-2 mb-2">
@@ -276,31 +276,31 @@ export function ProjectShowcaseGrid() {
                     </span>
                   </div>
 
-                  <h3 className="font-heading text-xl font-bold text-ink mb-2.5 group-hover:text-green transition-colors duration-300">
+                  <h3 className="font-heading text-xl font-bold text-neutral-900 mb-2.5 group-hover:text-green transition-colors duration-300">
                     {project.name}
                   </h3>
-                  <p className="text-xs text-soft leading-relaxed mb-6 font-normal">
+                  <p className="text-xs text-neutral-600 leading-relaxed mb-6 font-normal">
                     {project.description}
                   </p>
 
                   {/* High-Tech Technical Metric Blocks */}
                   <div className="grid grid-cols-2 gap-3 mb-6">
-                    <div className="p-3.5 rounded-none bg-neutral-50 dark:bg-neutral-900/60 border border-neutral-200 dark:border-neutral-800 transition-colors group-hover:border-neutral-300 dark:group-hover:border-neutral-700">
-                      <div className="flex items-center gap-1.5 text-[11px] text-soft mb-1 font-mono">
+                    <div className="p-3.5 rounded-none bg-neutral-100 border border-neutral-200 transition-colors group-hover:border-neutral-300">
+                      <div className="flex items-center gap-1.5 text-[11px] text-neutral-700 mb-1 font-mono font-medium">
                         <Leaf className="w-3.5 h-3.5 text-green" />
-                        <span className="uppercase tracking-wider">CO2 Abatement</span>
+                        <span className="uppercase tracking-wider text-neutral-700">CO2 Abatement</span>
                       </div>
-                      <span className="text-xs sm:text-sm font-heading font-bold text-ink">
+                      <span className="text-xs sm:text-sm font-heading font-bold text-neutral-900 block">
                         {project.co2Offset}
                       </span>
                     </div>
 
-                    <div className="p-3.5 rounded-none bg-neutral-50 dark:bg-neutral-900/60 border border-neutral-200 dark:border-neutral-800 transition-colors group-hover:border-neutral-300 dark:group-hover:border-neutral-700">
-                      <div className="flex items-center gap-1.5 text-[11px] text-soft mb-1 font-mono">
-                        <Zap className="w-3.5 h-3.5 text-emerald-500" />
-                        <span className="uppercase tracking-wider">Interconnect</span>
+                    <div className="p-3.5 rounded-none bg-neutral-100 border border-neutral-200 transition-colors group-hover:border-neutral-300">
+                      <div className="flex items-center gap-1.5 text-[11px] text-neutral-700 mb-1 font-mono font-medium">
+                        <Zap className="w-3.5 h-3.5 text-emerald-600" />
+                        <span className="uppercase tracking-wider text-neutral-700">Interconnect</span>
                       </div>
-                      <span className="text-xs sm:text-sm font-heading font-bold text-ink truncate block">
+                      <span className="text-xs sm:text-sm font-heading font-bold text-neutral-900 truncate block">
                         {project.gridInterconnect}
                       </span>
                     </div>
@@ -308,9 +308,9 @@ export function ProjectShowcaseGrid() {
                 </div>
 
                 {/* Card Footer with Inspect Trigger */}
-                <div className="pt-4 border-t border-neutral-100 dark:border-neutral-800/80 flex items-center justify-between gap-2">
-                  <div className="text-[11px] font-mono text-soft truncate max-w-[55%]">
-                    Offtaker: <strong className="text-ink">{project.offtaker.split("(")[0].trim()}</strong>
+                <div className="pt-4 border-t border-neutral-100 flex items-center justify-between gap-2">
+                  <div className="text-[11px] font-mono text-neutral-600 truncate max-w-[55%]">
+                    Offtaker: <strong className="text-neutral-900">{project.offtaker.split("(")[0].trim()}</strong>
                   </div>
 
                   <button
@@ -348,7 +348,7 @@ export function ProjectShowcaseGrid() {
                     <span className="text-[10px] font-mono uppercase tracking-wider text-green font-bold block">
                       TECHNICAL DOSSIER // {activeModalProject.state.toUpperCase()}
                     </span>
-                    <h3 className="font-heading text-lg sm:text-xl font-bold text-ink">
+                    <h3 className="font-heading text-lg sm:text-xl font-bold text-neutral-900 dark:text-white">
                       {activeModalProject.name}
                     </h3>
                   </div>
@@ -359,7 +359,7 @@ export function ProjectShowcaseGrid() {
                   onClick={() => setActiveModalProject(null)}
                   className="p-2 border border-neutral-200 dark:border-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors cursor-pointer"
                 >
-                  <X className="w-4 h-4 text-ink" />
+                  <X className="w-4 h-4 text-neutral-700 dark:text-neutral-300" />
                 </button>
               </div>
 
@@ -367,15 +367,15 @@ export function ProjectShowcaseGrid() {
               <div className="p-6 sm:p-8 space-y-6">
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                   <div className="p-3.5 border border-neutral-200 dark:border-neutral-800 bg-neutral-50/50 dark:bg-neutral-900/40">
-                    <span className="text-[10px] font-mono uppercase text-soft block mb-1">CAPACITY</span>
+                    <span className="text-[10px] font-mono uppercase text-neutral-500 dark:text-neutral-400 block mb-1">CAPACITY</span>
                     <span className="font-heading text-lg font-bold text-green">{activeModalProject.capacity}</span>
                   </div>
                   <div className="p-3.5 border border-neutral-200 dark:border-neutral-800 bg-neutral-50/50 dark:bg-neutral-900/40">
-                    <span className="text-[10px] font-mono uppercase text-soft block mb-1">INTERCONNECT</span>
-                    <span className="font-mono text-xs font-bold text-ink">{activeModalProject.techSpecs.substation}</span>
+                    <span className="text-[10px] font-mono uppercase text-neutral-500 dark:text-neutral-400 block mb-1">INTERCONNECT</span>
+                    <span className="font-mono text-xs font-bold text-neutral-900 dark:text-white">{activeModalProject.techSpecs.substation}</span>
                   </div>
                   <div className="p-3.5 border border-neutral-200 dark:border-neutral-800 bg-neutral-50/50 dark:bg-neutral-900/40 col-span-2 sm:col-span-1">
-                    <span className="text-[10px] font-mono uppercase text-soft block mb-1">STATUS</span>
+                    <span className="text-[10px] font-mono uppercase text-neutral-500 dark:text-neutral-400 block mb-1">STATUS</span>
                     <span className="font-mono text-xs font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-1.5">
                       <CheckCircle2 className="w-3.5 h-3.5" />
                       {activeModalProject.techSpecs.cod}
@@ -385,23 +385,23 @@ export function ProjectShowcaseGrid() {
 
                 <div className="space-y-3 font-mono text-xs">
                   <div className="flex justify-between py-2 border-b border-neutral-100 dark:border-neutral-800">
-                    <span className="text-soft">Module / Generation Architecture:</span>
-                    <strong className="text-ink text-right">{activeModalProject.techSpecs.modules}</strong>
+                    <span className="text-neutral-600 dark:text-neutral-400">Module / Generation Architecture:</span>
+                    <strong className="text-neutral-900 dark:text-white text-right">{activeModalProject.techSpecs.modules}</strong>
                   </div>
                   <div className="flex justify-between py-2 border-b border-neutral-100 dark:border-neutral-800">
-                    <span className="text-soft">Inverter &amp; Control Topology:</span>
-                    <strong className="text-ink text-right">{activeModalProject.techSpecs.inverter}</strong>
+                    <span className="text-neutral-600 dark:text-neutral-400">Inverter &amp; Control Topology:</span>
+                    <strong className="text-neutral-900 dark:text-white text-right">{activeModalProject.techSpecs.inverter}</strong>
                   </div>
                   <div className="flex justify-between py-2 border-b border-neutral-100 dark:border-neutral-800">
-                    <span className="text-soft">PPA / Commercial Structure:</span>
-                    <strong className="text-ink text-right">{activeModalProject.techSpecs.tariff}</strong>
+                    <span className="text-neutral-600 dark:text-neutral-400">PPA / Commercial Structure:</span>
+                    <strong className="text-neutral-900 dark:text-white text-right">{activeModalProject.techSpecs.tariff}</strong>
                   </div>
                   <div className="flex justify-between py-2 border-b border-neutral-100 dark:border-neutral-800">
-                    <span className="text-soft">Primary Sovereign/Industrial Offtaker:</span>
-                    <strong className="text-ink text-right">{activeModalProject.offtaker}</strong>
+                    <span className="text-neutral-600 dark:text-neutral-400">Primary Sovereign/Industrial Offtaker:</span>
+                    <strong className="text-neutral-900 dark:text-white text-right">{activeModalProject.offtaker}</strong>
                   </div>
                   <div className="flex justify-between py-2">
-                    <span className="text-soft">Carbon Offset Performance:</span>
+                    <span className="text-neutral-600 dark:text-neutral-400">Carbon Offset Performance:</span>
                     <strong className="text-green text-right">{activeModalProject.co2Offset}</strong>
                   </div>
                 </div>

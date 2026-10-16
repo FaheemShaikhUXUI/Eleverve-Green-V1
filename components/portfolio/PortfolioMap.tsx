@@ -50,8 +50,8 @@ export function PortfolioMap() {
                 )}
               />
 
-              {/* Top Image Banner on Each Card */}
-              <div className="relative w-full h-44 sm:h-48 overflow-hidden rounded-none border-b border-neutral-200 dark:border-neutral-800 bg-neutral-900">
+              {/* Top Image Banner on Each Card with Headline Over Image */}
+              <div className="relative w-full h-48 sm:h-52 overflow-hidden rounded-none border-b border-neutral-200 bg-neutral-900">
                 <Image
                   src={imageSrc}
                   alt={asset.state}
@@ -59,10 +59,10 @@ export function PortfolioMap() {
                   sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/30 group-hover:opacity-90 transition-opacity duration-500 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-black/35 group-hover:opacity-90 transition-opacity duration-500 pointer-events-none" />
 
-                {/* Overlays on Image */}
-                <div className="absolute top-3 left-3 z-10 flex items-center gap-1.5 px-2.5 py-1 bg-black/65 backdrop-blur-md border border-white/20 text-white rounded-none transition-transform duration-300 group-hover:translate-x-0.5">
+                {/* Overlays on Image - Top Badges */}
+                <div className="absolute top-3 left-3 z-10 flex items-center gap-1.5 px-2.5 py-1 bg-black/75 backdrop-blur-md border border-white/20 text-white rounded-none transition-transform duration-300 group-hover:translate-x-0.5">
                   <span
                     className={cn(
                       "w-1.5 h-1.5 rounded-full transition-transform duration-300 group-hover:scale-125",
@@ -87,12 +87,12 @@ export function PortfolioMap() {
                   {asset.status}
                 </div>
 
-                {/* Headlines Over Image — Saves Vertical Space */}
-                <div className="absolute bottom-3 left-3.5 right-3.5 z-10 flex flex-col justify-end">
-                  <span className="block font-heading text-lg sm:text-xl font-bold tracking-tight text-white drop-shadow leading-tight transition-colors duration-300 group-hover:text-emerald-300">
+                {/* Headline Text Placed Directly Over Image */}
+                <div className="absolute bottom-3 left-4 right-4 z-20">
+                  <span className="block font-heading text-lg sm:text-xl font-bold tracking-tight text-white mb-0.5 drop-shadow-md">
                     {asset.state}
                   </span>
-                  <div className="font-heading text-2xl sm:text-3xl font-extrabold text-emerald-400 tracking-tight drop-shadow leading-tight">
+                  <div className="font-heading text-2xl sm:text-3xl font-extrabold text-emerald-400 tracking-tight drop-shadow-md">
                     {asset.capacity}
                   </div>
                 </div>
@@ -102,19 +102,21 @@ export function PortfolioMap() {
                 )}
               </div>
 
-              {/* Card Body — Compact Streamlined Content */}
-              <div className="p-4 sm:p-5 flex flex-col flex-1 justify-between bg-white dark:bg-neutral-950 transition-colors duration-300">
-                <p className="text-xs text-soft leading-relaxed font-normal mb-3">
-                  {asset.description}
-                </p>
+              {/* Card Body */}
+              <div className="p-6 sm:p-7 flex flex-col flex-1 justify-between bg-white transition-colors duration-300">
+                <div>
+                  <p className="text-xs text-neutral-700 leading-relaxed font-normal mb-6">
+                    {asset.description}
+                  </p>
+                </div>
 
-                <div className="pt-2.5 border-t border-neutral-100 dark:border-neutral-800 flex items-center justify-between text-[11px] font-mono">
-                  <span className="text-soft group-hover:text-ink transition-colors duration-200">
+                <div className="pt-3 border-t border-neutral-100 flex items-center justify-between text-[11px] font-mono">
+                  <span className="text-neutral-600 font-medium group-hover:text-neutral-900 transition-colors duration-200">
                     {asset.expansion}
                   </span>
                   <MapPin
                     className={cn(
-                      "w-3.5 h-3.5 transition-all duration-300",
+                      "w-4 h-4 transition-all duration-300",
                       isActive ? "text-green scale-110" : "text-neutral-400 group-hover:text-green group-hover:translate-y-[-2px]"
                     )}
                   />

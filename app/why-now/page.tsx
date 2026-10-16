@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import type { Metadata } from "next";
 import { PageHeroHeader } from "@/components/ui/PageHeroHeader";
 import { MediaSplitSection } from "@/components/ui/MediaSplitSection";
@@ -20,31 +21,56 @@ export default function WhyNowPage() {
       num: "01",
       title: "Renewables Scale & Solar Duck Curve",
       desc: "Massive daytime solar capacity has solved raw peak-sun volume, but created acute midday oversupply across regional grids.",
+      image: "/images/heroes/model.jpg",
+      tagName: "Oversupply Risk",
+      metricName: "Duck Curve Volume",
+      telemetry: "12:00 MIDDAY SOLAR PEAK",
+      accent: "emerald",
     },
     {
       num: "02",
       title: "Solar Curtailment at Midday",
       desc: "Grid substations in high-insolation states increasingly face curtailment instructions when generation outstrips immediate local absorption.",
+      image: "/images/solar-substation.jpg",
+      tagName: "Grid Curtailment",
+      metricName: "Substation Absorption",
+      telemetry: "SUBSTATION FEEDER SATURATION",
+      accent: "sky",
     },
     {
       num: "03",
       title: "Surging Demand Into Evening and Night",
       desc: "Industrial shifts, commercial cooling, and residential peaks create steep demand ramps between 6:00 PM and 11:00 PM when solar is zero.",
+      image: "/images/wind-landscape.jpg",
+      tagName: "Peak Deficit",
+      metricName: "18:00 - 23:00 Ramp",
+      telemetry: "18:00 - 23:00 PEAK DEFICIT",
+      accent: "amber",
     },
     {
       num: "04",
       title: "Buyers Needing Predictable Schedules",
       desc: "Offtakers face punishing deviation settlement penalties (DSM) if power cannot be scheduled in firm 15-minute time-of-day blocks.",
+      image: "/images/dispatch-center.jpg",
+      tagName: "DSM Penalties",
+      metricName: "15-Min Scheduling",
+      telemetry: "15-MIN DISPATCH SYNC",
+      accent: "rose",
     },
     {
       num: "05",
       title: "Institutions Looking for Contracted Cashflows",
       desc: "Lenders and infrastructure investors seek bankable long-term PPAs backed by firm delivery obligations rather than merchant exposure.",
+      image: "/images/bess-facility.jpg",
+      tagName: "Bankable Supply",
+      metricName: "Contracted Cashflows",
+      telemetry: "25-YEAR AAA BANKABLE PPA",
+      accent: "teal",
     },
   ];
 
   return (
-    <div className="pb-24">
+    <div className="pb-0">
       {/* Dark Hero Header Extending Behind Fixed Navbar */}
       <PageHeroHeader
         eyebrow="Market Transition"
@@ -56,7 +82,9 @@ export default function WhyNowPage() {
         imagePosition="center 55%"
       />
 
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-8 sm:pt-12">
+      {/* SECTION 1: 5 Structural Market Catalysts (LIGHT THEME) */}
+      <section className="w-full py-16 sm:py-20 section-light">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 
         {/* 5 Structural Market Catalysts — Standalone Section Header (No Outer Box) */}
         <div className="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
@@ -77,148 +105,130 @@ export default function WhyNowPage() {
           </div>
         </div>
 
-        {/* Inner Tiles Only In Boxes — Minimalist Curated Colors, Zero Curves (3 on top row, 2 on bottom row) */}
+        {/* 5 Structural Market Catalysts — Striking Institutional Infrastructure Cards (Zero Curves) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 mb-20">
           {drivers.map((d, idx) => {
             const colSpanClass = idx < 3 ? "lg:col-span-2" : "lg:col-span-3";
-            const styles = [
-              // 01: Soft Sage / Emerald Minimalist
-              {
-                box: "bg-emerald-50/40 dark:bg-emerald-950/20 border-emerald-200/80 dark:border-emerald-800/40 hover:border-emerald-400",
-                badge: "border-emerald-500/40 bg-emerald-100/60 dark:bg-emerald-900/40 text-emerald-800 dark:text-emerald-300",
-                tag: "bg-emerald-100/50 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800/50",
-                metric: "text-emerald-700 dark:text-emerald-400",
-                tagName: "Oversupply Risk",
-                metricName: "Duck Curve Volume",
-              },
-              // 02: Soft Sky / Glacier Minimalist
-              {
-                box: "bg-sky-50/40 dark:bg-sky-950/20 border-sky-200/80 dark:border-sky-800/40 hover:border-sky-400",
-                badge: "border-sky-500/40 bg-sky-100/60 dark:bg-sky-900/40 text-sky-800 dark:text-sky-300",
-                tag: "bg-sky-100/50 text-sky-800 dark:bg-sky-900/30 dark:text-sky-300 border-sky-200 dark:border-sky-800/50",
-                metric: "text-sky-700 dark:text-sky-400",
-                tagName: "Grid Curtailment",
-                metricName: "Substation Absorption",
-              },
-              // 03: Soft Amber / Evening Sunset Minimalist
-              {
-                box: "bg-amber-50/40 dark:bg-amber-950/20 border-amber-200/80 dark:border-amber-800/40 hover:border-amber-400",
-                badge: "border-amber-500/40 bg-amber-100/60 dark:bg-amber-900/40 text-amber-800 dark:text-amber-300",
-                tag: "bg-amber-100/50 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300 border-amber-200 dark:border-amber-800/50",
-                metric: "text-amber-700 dark:text-amber-400",
-                tagName: "Peak Deficit",
-                metricName: "18:00 - 23:00 Ramp",
-              },
-              // 04: Soft Slate / Titanium Minimalist
-              {
-                box: "bg-slate-50/60 dark:bg-slate-900/20 border-slate-200/90 dark:border-slate-800/50 hover:border-slate-400",
-                badge: "border-slate-400/50 bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-300",
-                tag: "bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-300 border-slate-200 dark:border-slate-700",
-                metric: "text-slate-700 dark:text-slate-300",
-                tagName: "DSM Penalties",
-                metricName: "15-Min Scheduling",
-              },
-              // 05: Soft Eucalyptus Minimalist
-              {
-                box: "bg-teal-50/40 dark:bg-teal-950/20 border-teal-200/80 dark:border-teal-800/40 hover:border-teal-400",
-                badge: "border-teal-500/40 bg-teal-100/60 dark:bg-teal-900/40 text-teal-800 dark:text-teal-300",
-                tag: "bg-teal-100/50 text-teal-800 dark:bg-teal-900/30 dark:text-teal-300 border-teal-200 dark:border-teal-800/50",
-                metric: "text-teal-700 dark:text-teal-400",
-                tagName: "Bankable Supply",
-                metricName: "Contracted Cashflows",
-              },
-            ];
-
-            const cur = styles[idx];
 
             return (
               <div
                 key={d.num}
                 className={cn(
                   colSpanClass,
-                  "p-8 sm:p-10 flex flex-col justify-between transition-all duration-300 rounded-none border shadow-xs hover:shadow-md",
-                  cur.box
+                  "rounded-none border border-neutral-200/90 dark:border-neutral-800 bg-white dark:bg-neutral-900 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-1.5 flex flex-col group overflow-hidden relative"
                 )}
               >
-                <div>
-                  <div className="flex items-center justify-between pb-6 mb-6 border-b border-black/5 dark:border-white/10">
-                    <div
-                      className={cn(
-                        "w-9 h-9 border font-mono text-xs font-bold flex items-center justify-center rounded-none shadow-2xs",
-                        cur.badge
-                      )}
-                    >
+                {/* Luminous Top Hover Beam */}
+                <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-emerald-500 via-teal-400 to-sky-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-30" />
+
+                {/* Top Image Banner with Telemetry Badges & Headline Over Image */}
+                <div className="relative w-full h-56 sm:h-64 overflow-hidden bg-neutral-900 border-b border-neutral-200 dark:border-neutral-800">
+                  <Image
+                    src={d.image}
+                    alt={d.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  />
+                  {/* High contrast gradient overlay for clear text readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-black/35 group-hover:opacity-90 transition-opacity duration-500 pointer-events-none" />
+
+                  {/* Top Badges */}
+                  <div className="absolute top-3.5 left-3.5 z-10 flex items-center gap-2">
+                    <div className="w-8 h-8 bg-black/80 backdrop-blur-md border border-white/20 text-emerald-400 font-mono text-xs font-bold flex items-center justify-center rounded-none shadow-sm">
                       {d.num}
                     </div>
-                    <span
-                      className={cn(
-                        "px-2.5 py-1 font-mono text-[10px] uppercase tracking-wider font-semibold rounded-none border",
-                        cur.tag
-                      )}
-                    >
-                      {cur.tagName}
-                    </span>
+                    <div className="px-2.5 py-1 bg-black/75 backdrop-blur-md border border-white/20 text-[10px] font-mono uppercase tracking-widest text-emerald-300 font-semibold rounded-none flex items-center gap-1.5 shadow-sm">
+                      <span className="w-1.5 h-1.5 bg-emerald-400 rounded-none inline-block animate-pulse" />
+                      {d.tagName}
+                    </div>
                   </div>
 
-                  <h3 className="font-heading text-xl font-bold text-neutral-900 dark:text-white tracking-tight mb-3">
-                    {d.title}
-                  </h3>
-                  <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed font-normal mb-6">
-                    {d.desc}
-                  </p>
+                  {/* Headline & Telemetry Directly Over Image */}
+                  <div className="absolute bottom-3.5 left-4 right-4 z-20 space-y-2">
+                    <div className="flex items-center justify-between text-[10px] font-mono tracking-wider uppercase text-neutral-300 bg-black/75 backdrop-blur-md px-2.5 py-1 border border-white/10">
+                      <span className="text-white/90 font-medium truncate">{d.telemetry}</span>
+                      <span className="text-emerald-400 shrink-0 font-bold ml-2">ACTIVE</span>
+                    </div>
+
+                    <h3 className="font-heading text-lg sm:text-xl lg:text-2xl font-bold text-white tracking-tight leading-snug drop-shadow-md group-hover:text-emerald-300 transition-colors">
+                      {d.title}
+                    </h3>
+                  </div>
                 </div>
 
-                <div className="pt-4 border-t border-black/5 dark:border-white/10 flex items-center justify-between text-xs font-mono text-neutral-400">
-                  <span>FOCUS</span>
-                  <span className={cn("font-semibold", cur.metric)}>
-                    → {cur.metricName}
-                  </span>
+                {/* Bottom Content Body */}
+                <div className="p-6 sm:p-7 flex flex-col flex-1 justify-between bg-white dark:bg-neutral-900 transition-colors">
+                  <div>
+                    <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed font-normal mb-6">
+                      {d.desc}
+                    </p>
+                  </div>
+
+                  <div className="pt-4 border-t border-neutral-100 dark:border-neutral-800 flex items-center justify-between text-xs font-mono text-neutral-400">
+                    <span className="uppercase tracking-wider">FOCUS VECTOR</span>
+                    <span className="font-semibold text-emerald-600 dark:text-emerald-400 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                      → {d.metricName}
+                    </span>
+                  </div>
                 </div>
               </div>
             );
           })}
         </div>
+        </div>
+      </section>
 
-        {/* 24-Hour Diurnal Dispatch Simulation — Glides from Downside */}
-        <SlideInBottom className="mb-20">
+      {/* SECTION 2: 24-Hour Diurnal Dispatch Simulation (FULL-WIDTH THEME BREAK) */}
+      <section className="w-full py-20 section-theme-break">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          {/* 24-Hour Diurnal Dispatch Simulation — Glides from Downside */}
+          <SlideInBottom className="mb-4">
           <div className="max-w-3xl mb-6">
             <div className="flex items-center gap-3 mb-2">
-              <span className="px-2.5 py-1 bg-amber-50 border border-amber-600/30 text-[10px] font-mono uppercase tracking-widest text-amber-800 font-semibold rounded-none flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 bg-amber-600 rounded-none inline-block"></span>
+              <span className="px-2.5 py-1 bg-amber-500/15 border border-amber-400/30 text-[10px] font-mono uppercase tracking-widest text-amber-300 font-semibold rounded-none flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 bg-amber-400 rounded-none inline-block"></span>
                 DAY-CYCLE VISUALIZATION
               </span>
-              <span className="font-mono text-xs text-neutral-400 tracking-wider">
+              <span className="font-mono text-xs text-white/50 tracking-wider">
                 // DISPATCH SIMULATOR
               </span>
             </div>
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-heading text-neutral-900 tracking-tight leading-tight">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-heading text-white tracking-tight leading-tight mb-2">
               Bridging Midday Solar Surplus and Evening Peak Demand
             </h3>
+            <p className="text-sm sm:text-base text-neutral-300 font-normal leading-relaxed">
+              Explore dynamic diurnal generation envelopes across Solar, Wind, Hydro, Hybrid, and BESS Storage. Scrub any hour or engage the auto-play simulation cycle to inspect contracted firm delivery thresholds and real-time net balances.
+            </p>
           </div>
           <ResourceSimulator />
-        </SlideInBottom>
-      </div>
-
-      <MediaSplitSection
-        eyebrow="The Solution Architecture"
-        titleLight="Firm & dispatchable renewable energy (FDRE) configured for"
-        titleBold="round-the-clock stability."
-        lead="Eleverve Green solves the hour-deficit challenge by designing multi-technology hybrid generation (wind + solar + hydro + BESS) around the offtaker's specific hourly consumption block, guaranteeing firm delivered power."
-        imageSrc="/images/wind-landscape.jpg"
-        imageAlt="Wind energy turbines against evening sky"
-        imageCaption="Evening Counterweight Wind Assets · Grid Dispatch Synchronization"
-        imagePosition="left"
-      >
-        <div>
-          <Link
-            href="/solutions"
-            className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-none bg-emerald-600 hover:bg-emerald-500 text-white font-mono font-semibold text-xs uppercase tracking-wider transition-all shadow-md hover:shadow-lg"
-          >
-            <span>Explore FDRE &amp; RTC Solutions</span>
-            <ArrowRight className="w-4 h-4" />
-          </Link>
+          </SlideInBottom>
         </div>
-      </MediaSplitSection>
+      </section>
+
+      {/* SECTION 3: Solution Architecture (LIGHT THEME) */}
+      <section className="w-full py-20 section-light">
+        <MediaSplitSection
+          eyebrow="The Solution Architecture"
+          titleLight="Firm & dispatchable renewable energy (FDRE) configured for"
+          titleBold="round-the-clock stability."
+          lead="Eleverve Green solves the hour-deficit challenge by designing multi-technology hybrid generation (wind + solar + hydro + BESS) around the offtaker's specific hourly consumption block, guaranteeing firm delivered power."
+          imageSrc="/images/wind-landscape.jpg"
+          imageAlt="Wind energy turbines against evening sky"
+          imageCaption="Evening Counterweight Wind Assets · Grid Dispatch Synchronization"
+          imagePosition="left"
+        >
+          <div>
+            <Link
+              href="/solutions"
+              className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-none bg-emerald-600 hover:bg-emerald-500 text-white font-mono font-semibold text-xs uppercase tracking-wider transition-all shadow-md hover:shadow-lg"
+            >
+              <span>Explore FDRE &amp; RTC Solutions</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </MediaSplitSection>
+      </section>
     </div>
   );
 }

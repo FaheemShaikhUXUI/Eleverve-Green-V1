@@ -48,11 +48,11 @@ export function SolutionCards() {
               type="button"
               onClick={() => setSelectedId(sol.id)}
               className={cn(
-                "rounded-none border text-left transition-all duration-500 ease-out flex flex-col justify-between group bg-white dark:bg-neutral-950 relative",
-                "hover:-translate-y-1 hover:shadow-[0_20px_35px_-10px_rgba(0,0,0,0.12)] dark:hover:shadow-[0_20px_35px_-10px_rgba(0,0,0,0.6)]",
+                "rounded-none border text-left transition-all duration-500 ease-out flex flex-col justify-between group bg-white [.section-theme-break_&]:bg-black/50 relative",
+                "hover:-translate-y-1 hover:shadow-[0_20px_35px_-10px_rgba(0,0,0,0.12)] [.section-theme-break_&]:hover:shadow-[0_20px_35px_-10px_rgba(0,0,0,0.6)]",
                 isSelected
                   ? "border-green ring-1 ring-green shadow-md z-20"
-                  : "border-neutral-200 dark:border-neutral-800 hover:border-neutral-400 dark:hover:border-neutral-600"
+                  : "border-neutral-200 [.section-theme-break_&]:border-white/15 hover:border-neutral-400 [.section-theme-break_&]:hover:border-white/30"
               )}
             >
               {/* Luminous Top Hover Accent Line */}
@@ -65,8 +65,8 @@ export function SolutionCards() {
                 )}
               />
 
-              {/* Top Image Banner */}
-              <div className="relative w-full h-44 sm:h-48 overflow-hidden rounded-none border-b border-neutral-200 dark:border-neutral-800 bg-neutral-900">
+              {/* Top Image Banner with Headline Over Image */}
+              <div className="relative w-full h-44 sm:h-48 overflow-hidden rounded-none border-b border-neutral-200 [.section-theme-break_&]:border-white/15 bg-neutral-900">
                 <Image
                   src={imageSrc}
                   alt={sol.title}
@@ -74,10 +74,10 @@ export function SolutionCards() {
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/30 group-hover:opacity-90 transition-opacity duration-500 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-black/35 group-hover:opacity-90 transition-opacity duration-500 pointer-events-none" />
 
-                {/* Overlays on Image */}
-                <div className="absolute top-3 left-3 z-10 flex items-center gap-1.5 px-2.5 py-1 bg-black/65 backdrop-blur-md border border-white/20 text-white rounded-none transition-transform duration-300 group-hover:translate-x-0.5">
+                {/* Overlays on Image - Top Row */}
+                <div className="absolute top-3 left-3 z-10 flex items-center gap-1.5 px-2.5 py-1 bg-black/75 backdrop-blur-md border border-white/20 text-white rounded-none transition-transform duration-300 group-hover:translate-x-0.5">
                   <span
                     className={cn(
                       "w-1.5 h-1.5 rounded-full transition-transform duration-300 group-hover:scale-125",
@@ -96,18 +96,18 @@ export function SolutionCards() {
                     "absolute top-3 right-3 z-10 p-1.5 rounded-none border backdrop-blur-md transition-all duration-300",
                     isSelected
                       ? "bg-green text-white border-green"
-                      : "bg-black/50 text-white/80 border-white/20 group-hover:bg-green group-hover:text-white group-hover:border-green group-hover:scale-105"
+                      : "bg-black/60 text-white/90 border-white/20 group-hover:bg-green group-hover:text-white group-hover:border-green group-hover:scale-105"
                   )}
                 >
                   {getSolutionIcon(sol.id)}
                 </div>
 
-                {/* Headline Over Image — Saves Vertical Space */}
-                <div className="absolute bottom-3 left-3.5 right-3.5 z-10">
+                {/* Headline Text Directly Over Image */}
+                <div className="absolute bottom-3 left-3.5 right-3.5 z-20">
                   <h3
                     className={cn(
-                      "text-base sm:text-lg font-heading font-bold tracking-tight text-white drop-shadow leading-snug transition-colors duration-300",
-                      isSelected ? "text-emerald-300" : "group-hover:text-emerald-300"
+                      "text-base sm:text-lg font-bold font-heading tracking-tight leading-snug drop-shadow-md transition-colors duration-300",
+                      isSelected ? "text-emerald-300" : "text-white group-hover:text-emerald-300"
                     )}
                   >
                     {sol.title}
@@ -119,19 +119,21 @@ export function SolutionCards() {
                 )}
               </div>
 
-              {/* Card Body — Streamlined for Vertical Compactness */}
-              <div className="p-4 sm:p-5 flex flex-col flex-1 justify-between bg-white dark:bg-neutral-950 transition-colors duration-300">
-                <p className="text-xs text-soft line-clamp-2 leading-relaxed mb-3">
-                  {sol.description}
-                </p>
+              {/* Card Body */}
+              <div className="p-5 sm:p-6 flex flex-col flex-1 justify-between bg-white [.section-theme-break_&]:bg-transparent transition-colors duration-300">
+                <div>
+                  <p className="text-xs text-neutral-600 [.section-theme-break_&]:text-neutral-300 line-clamp-3 leading-relaxed mb-4 font-normal">
+                    {sol.description}
+                  </p>
+                </div>
 
-                <div className="pt-2.5 border-t border-neutral-100 dark:border-neutral-800 flex items-center justify-between">
+                <div className="pt-3 border-t border-neutral-100 [.section-theme-break_&]:border-white/10 flex items-center justify-between">
                   <span
                     className={cn(
                       "font-mono text-[10px] uppercase tracking-wider px-2 py-0.5 border rounded-none transition-all duration-300",
                       isSelected
-                        ? "border-green/40 text-green bg-green/5"
-                        : "border-neutral-200 dark:border-neutral-800 text-soft group-hover:border-green/40 group-hover:text-green group-hover:bg-green/5"
+                        ? "border-green/40 text-green bg-green/5 font-semibold"
+                        : "border-neutral-200 [.section-theme-break_&]:border-white/15 text-neutral-600 [.section-theme-break_&]:text-neutral-300 group-hover:border-green/40 group-hover:text-green group-hover:bg-green/5"
                     )}
                   >
                     {sol.badge}
@@ -141,7 +143,7 @@ export function SolutionCards() {
                       "font-mono text-xs transition-all duration-300",
                       isSelected
                         ? "text-green translate-x-1 font-bold"
-                        : "text-soft group-hover:text-green group-hover:translate-x-1.5 font-semibold"
+                        : "text-neutral-500 [.section-theme-break_&]:text-neutral-400 group-hover:text-green group-hover:translate-x-1.5 font-semibold"
                     )}
                   >
                     →
@@ -155,7 +157,7 @@ export function SolutionCards() {
                   "px-4 py-1.5 border-t text-[10px] font-mono transition-colors duration-300 flex items-center justify-between",
                   isSelected
                     ? "bg-green text-white font-bold border-green"
-                    : "bg-neutral-50 dark:bg-neutral-900 text-soft group-hover:text-ink border-neutral-100 dark:border-neutral-800"
+                    : "bg-neutral-50 [.section-theme-break_&]:bg-white/5 text-soft group-hover:text-ink border-neutral-100 [.section-theme-break_&]:border-white/10"
                 )}
               >
                 <span>{isSelected ? "ACTIVE SELECTION" : `SOLUTION // 0${idx + 1}`}</span>
@@ -176,9 +178,9 @@ export function SolutionCards() {
       </div>
 
       {/* Selected Solution Deep Dive Comparison Panel Connected Directly Below */}
-      <div className="mt-3 border border-neutral-200 dark:border-neutral-800 border-t-2 border-t-green bg-white dark:bg-neutral-950 rounded-none p-6 sm:p-10 lg:p-12 shadow-sm relative overflow-hidden">
+      <div className="mt-3 border border-neutral-200 [.section-theme-break_&]:border-white/15 border-t-2 border-t-green bg-white [.section-theme-break_&]:bg-black/60 rounded-none p-6 sm:p-10 lg:p-12 shadow-sm relative overflow-hidden">
         {/* Connected Header Bar showing direct link with selected tile */}
-        <div className="flex flex-wrap items-center justify-between gap-4 pb-6 mb-8 border-b border-neutral-200 dark:border-neutral-800/80">
+        <div className="flex flex-wrap items-center justify-between gap-4 pb-6 mb-8 border-b border-neutral-200 [.section-theme-break_&]:border-white/10">
           <div className="flex items-center gap-3.5">
             <div className="w-9 h-9 rounded-none bg-green/10 border border-green/30 flex items-center justify-center text-green flex-shrink-0">
               <span className="w-2.5 h-2.5 bg-green rounded-none shadow-[0_0_8px_rgba(16,185,129,0.9)] animate-pulse" />
@@ -256,8 +258,8 @@ export function SolutionCards() {
           </div>
 
           {/* Institutional Commercial Terms Matrix */}
-          <div className="lg:col-span-5 border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900/60 rounded-none p-6 sm:p-8 space-y-4">
-            <span className="block font-mono text-xs uppercase tracking-widest text-amber font-semibold pb-3 border-b border-neutral-200 dark:border-neutral-800">
+          <div className="lg:col-span-5 border border-neutral-200 [.section-theme-break_&]:border-white/15 bg-neutral-50 [.section-theme-break_&]:bg-black/40 rounded-none p-6 sm:p-8 space-y-4">
+            <span className="block font-mono text-xs uppercase tracking-widest text-amber font-semibold pb-3 border-b border-neutral-200 [.section-theme-break_&]:border-white/15">
               Commercial &amp; Governance Terms
             </span>
 
